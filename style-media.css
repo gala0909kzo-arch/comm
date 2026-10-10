@@ -1,0 +1,303 @@
+@media (max-height: 980px) {
+    .home-mypacks-bottom {
+        display: none;
+    }
+
+    .welcome-screen-home {
+        height: calc(100vh - 151px);
+    }
+}
+
+@media (max-width: 910px) {
+    .dialog .lil-gui {
+        box-sizing: border-box;
+    }
+
+    .settingCommandBox {
+        flex-direction: column;
+    }
+
+    .backLoad-subLogo {
+        width: 80px;
+    }
+
+    .main-panel {
+        border-radius: 0;
+    }
+
+    .left-panel {
+        border-radius: 0;
+    }
+
+    .vertical-panel,
+    .right-panel-resizer,
+    #assets-button,
+    #dockbar_tracking,
+    #exportMine-button,
+    #switch_modeling,
+    #switch_function,
+    .introductionImage {
+        display: none !important;
+    }
+
+    #fileMobile-button {
+        display: flex;
+    }
+
+    #left_tool_strip {
+        top: auto;
+        bottom: 50%;
+        transform: translateY(50%);
+        left: auto;
+        right: 10px;
+    }
+
+    .bde-currentMode > div {
+        display: none !important;
+    }
+
+    .right-mobile-back {
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background: #0000004a;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: auto;
+        transition: background 0.5s ease-out;
+    }
+
+    .right-mobile-back.right-mobile-back-hide {
+        background: #00000000;
+        pointer-events: none;
+    }
+
+    .editor-panel > .right-panel {
+        position: absolute;
+        width: 85% !important;
+        height: 100%;
+        right: 0;
+        z-index: 1;
+        background: #161616;
+        padding: 5px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: transform 0.5s cubic-bezier(0, 0.85, 0, 1);
+    }
+
+    .right-panel-show {
+        transform: translateX(0) !important;
+    }
+
+    .introductionWelcomeBox > dotlottie-player {
+        margin-right: 0 !important;
+    }
+
+    .introductionBox {
+        width: calc(100% - 20px);
+        box-sizing: border-box;
+    }
+
+    .introductionClose {
+        top: 10px;
+        right: 10px;
+    }
+
+    .introductionContent {
+        padding: 20px;
+    }
+
+    .introductionContent h1 {
+        margin-top: 0;
+    }
+
+    .introductionContent div:first-child {
+        gap: 5px;
+    }
+
+    .introductionContent p {
+        font-size: 14px;
+        margin: 0 0 10px;
+    }
+
+    .introductionContent h2 > i {
+        font-weight: 100;
+        font-size: 17px;
+    }
+
+    .introductionFunc {
+        font-size: 13px;
+    }
+
+    #bottom_container {
+        top: 10px;
+        bottom: auto;
+    }
+
+    #top_container {
+        top: auto;
+        bottom: 10px;
+    }
+
+    .dockbar_menu_div {
+        transform: translate(30px, 30px) scale(0.8);
+        top: auto;
+        bottom: 50px;
+    }
+
+    .dockbar-overflow-menu {
+        transform: translate(-50%, 20px) scale(.8);
+    }
+
+    #right_tool_strip > button > span, #left_tool_strip > button > span {
+        right: auto;
+        left: -5px;
+        transform: translate(-100%, -50%);
+    }
+
+    .dialog > .cloudProjectsGUI {
+        width: min(1140px, calc(100vw - 0px));
+    }
+
+    .cloud-project-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cloud-project-tile {
+        flex: 1 1 156px;
+    }
+
+    #right_tool_strip {
+        top: auto;
+        bottom: 50%;
+        transform: translateY(50%);
+        right: auto;
+        left: 10px;
+    }
+}
+
+@media (max-height: 890px) {
+    .welcome-screen-side {
+        padding: 30px 0px;
+        gap: 20px;
+    }
+
+    .welcome-screen-side-button {
+        gap: 5px;
+    }
+
+    .welcome-screen-side-button > div:first-child, .welcome-screen-side-button > img {
+        width: 30px;
+        font-size: 18px;
+    }
+
+    .welcome-screen-main-menu-box {
+        font-size: 11px;
+    }
+
+    .welcome-screen-main-cloudList-select .welcome-screen-main-cloudList-tile {
+        width: 180px;
+    }
+
+    .welcome-screen-main-cloudList-select {
+        padding: 3px;
+    }
+
+    .welcome-screen-main-cloudList-tile {
+        flex: 1 1 116px;
+    }
+
+    .welcome-screen-main-menu > div {
+        font-size: 20px !important;
+    }
+
+    .welcome-screen-main-menu {
+        margin-left: 210px;
+        margin-bottom: -45px;
+    }
+
+    .welcome-screen-main-cloudList {
+        height: 190px;
+    }
+
+    .home-mypacks-box {
+        display: none;
+    }
+
+    .welcome-screen-header {
+        min-height: 0;
+    }
+
+    .welcome-screen-main-menu-box > a > div:first-child {
+        font-size: 14px;
+    }
+
+    #bde_version_read_more {
+        display: none !important;
+    }
+
+    .welcome-screen-header > div > h1 {
+        font-size: 30px !important;
+    }
+
+    #bde_version_cover > img {
+        display: none;
+    }
+
+    #bde_version_version {
+        display: none;
+    }
+
+    .welcome-screen-side-buttons {
+        gap: 20px;
+    }
+
+    .welcome-screen-main {
+        padding: 30px;
+        padding-left: 100px;
+    }
+
+    .welcome-screen-home {
+        gap: 10px;
+        height: calc(100vh - 60px);
+
+    }
+}
+
+@media (max-height: 750px) {
+    .introductionContent h1 {
+        font-size: 30px;
+        margin-top: 0;
+        line-height: 1;
+    }
+
+    .introductionContent p {
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .introductionContent h2 {
+        font-size: 13px;
+    }
+
+    .introductionFunc {
+        font-size: 12px;
+        padding: 7px 10px;
+    }
+
+    .introductionBox {
+        height: calc(100vh - 60px);
+    }
+
+    .introductionContent {
+        padding: 25px;
+    }
+
+    .introductionContent {
+        padding: 20px;
+        gap: 13px;
+    }
+}

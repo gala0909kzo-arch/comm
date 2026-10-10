@@ -1,0 +1,4605 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://bdengine.app/?server=default&content=import&id=790&mode=preview -->
+<html lang="en" class="bde-interactive"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <style>
+        html.bde-interactive #bde-description { display: none !important; }
+        html:not(.bde-interactive) body > :not(#bde-description) { display: none !important; }
+        html:not(.bde-interactive) body { margin: 0; background: #1c1c1c; color: #eee; }
+        #bde-description { box-sizing: border-box; max-width: 800px; margin: 0 auto; padding: 48px 24px; font: 16px/1.6 system-ui, sans-serif; }
+        #bde-description h1 { font-size: 28px; line-height: 1.25; }
+        #bde-description a { color: #b8d9ff; }
+    </style>
+    <script>
+        const editorVersion = '10002064'; //#versionID
+        const editorBuildDate = '2026-10-10T19:28:42.998Z'; //#buildDate
+        window.editorVersion = editorVersion;
+        window.editorBuildDate = editorBuildDate;
+        // Only named indexing crawlers use the static page. Browser automation and user agents keep the editor.
+        const crawlerUserAgent = typeof navigator.userAgent === 'string' ? navigator.userAgent : '';
+        window.isCrawler = /(?:^|[\s;(])(?:Googlebot(?:-(?:Image|Video|News))?|bingbot|Yandex(?:Bot|ComBot)|DuckDuckBot|Sogou (?:web|inst) spider|Yahoo! Slurp|Applebot)(?=[/\s;)]|$)/i.test(crawlerUserAgent);
+        document.documentElement.classList.add(window.isCrawler ? 'bde-crawler' : 'bde-interactive');
+        if (!window.isCrawler) {
+            document.write(`<link rel="stylesheet" href="/bdengine-content/style.css?v=${editorVersion}" fetchpriority="high">`);
+            document.write(`<link rel="stylesheet" href="/bdengine-content/style-media.css?v=${editorVersion}" fetchpriority="high">`);
+            document.write(`<link rel="stylesheet" href="/bdengine-content/style-icons.css?v=${editorVersion}" fetchpriority="high">`);
+        }
+    </script><link rel="stylesheet" href="./style.css" fetchpriority="high"><link rel="stylesheet" href="./style-media.css" fetchpriority="high"><link rel="stylesheet" href="./style-icons.css" fetchpriority="high">
+    <link rel="canonical" href="https://bdengine.app/">
+    <link rel="describedby" href="https://bdengine.app/llms.txt" type="text/plain">
+    <title>Project - BDEngine</title>
+    <meta name="description" content="BDEngine is a free display entity editor for Minecraft Java Edition. Create and animate models without mods or resource packs. Export commands and datapacks.">
+    <meta http-equiv="origin-trial" content="Aj7RONtxpMujYN1blzivvKGiQqwsAIO3xmR2iq8FPHU84WuVysBI+ibTEDZBGFX6DjknSjVPzKQD3NeSUyDV7g8AAABfeyJvcmlnaW4iOiJodHRwczovL2JkZW5naW5lLmFwcDo0NDMiLCJmZWF0dXJlIjoiV2ViTUNQIiwiZXhwaXJ5IjoxODA2MzY0ODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=">
+    <meta property="og:title" content="BDEngine - Minecraft Display Entity Editor &amp; Animator">
+    <meta property="og:description" content="BDEngine is a free display entity editor for Minecraft Java Edition. Create and animate models without mods or resource packs. Export commands and datapacks.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bdengine.app/">
+    <meta property="og:site_name" content="BDEngine">
+    <meta property="og:image" content="https://editor.bdecdn.com/covers/coverBDE.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="575">
+    <meta property="og:image:alt" content="BDEngine cover">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BDEngine - Minecraft Display Entity Editor &amp; Animator">
+    <meta name="twitter:description" content="BDEngine is a free display entity editor for Minecraft Java Edition. Create and animate models without mods or resource packs. Export commands and datapacks.">
+    <meta name="twitter:image" content="https://editor.bdecdn.com/covers/coverBDE.jpg">
+    <meta name="twitter:image:alt" content="BDEngine cover">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "BDEngine",
+            "alternateName": "Block Display Engine",
+            "applicationCategory": "3DApplication",
+            "operatingSystem": "Web",
+            "browserRequirements": "WebGL-enabled modern browser",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "url": "https://bdengine.app/",
+            "sameAs": [
+                "https://block-display.com/editor/",
+                "https://bdengine.app/",
+                "https://discord.gg/VCeHfSd6Xa",
+                "https://t.me/illystrayCreations",
+                "https://www.youtube.com/channel/UCz-qdqogYNQdA5O4kc6ovCA",
+                "https://www.planetminecraft.com/blog/bdengine-an-editor-for-your-block-display-models/",
+                "https://www.producthunt.com/products/bdengine"
+            ]
+        }
+    </script>
+    <meta name="keywords" content="Minecraft display entity editor, block display generator, item display, text display, online 3D editor, /summon command, datapack">
+    <meta name="yandex-verification" content="bde464c06c065da5">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="manifest" href="https://bdengine.app/bdengine-content/manifest.json?v=11">
+    <link rel="icon" href="https://editor.bdecdn.com/media/favicon.ico" type="image/x-icon">
+    <script type="text/javascript">
+        (function () {
+            if (window.isCrawler) return;
+            if (window.location.search.includes('mode=preview')) {
+                let style = document.createElement('style');
+                style.innerHTML = '#backload, #backload1 { background-color: #101010 !important; }';
+                document.head.appendChild(style);
+            }
+        })();
+    </script><style>#backload, #backload1 { background-color: #101010 !important; }</style>
+<style>@charset "UTF-8";/*!
+ * animate.css - https://animate.style/
+ * Version - 4.1.1
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2020 Animate.css
+ */
+:root {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+.animate__animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: var(--animate-duration);
+  animation-duration: var(--animate-duration);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animate__animated.animate__infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.animate__animated.animate__repeat-1 {
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: var(--animate-repeat);
+  animation-iteration-count: var(--animate-repeat);
+}
+.animate__animated.animate__repeat-2 {
+  -webkit-animation-iteration-count: calc(1 * 2);
+  animation-iteration-count: calc(1 * 2);
+  -webkit-animation-iteration-count: calc(var(--animate-repeat) * 2);
+  animation-iteration-count: calc(var(--animate-repeat) * 2);
+}
+.animate__animated.animate__repeat-3 {
+  -webkit-animation-iteration-count: calc(1 * 3);
+  animation-iteration-count: calc(1 * 3);
+  -webkit-animation-iteration-count: calc(var(--animate-repeat) * 3);
+  animation-iteration-count: calc(var(--animate-repeat) * 3);
+}
+.animate__animated.animate__delay-1s {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-delay: var(--animate-delay);
+  animation-delay: var(--animate-delay);
+}
+.animate__animated.animate__delay-2s {
+  -webkit-animation-delay: calc(1s * 2);
+  animation-delay: calc(1s * 2);
+  -webkit-animation-delay: calc(var(--animate-delay) * 2);
+  animation-delay: calc(var(--animate-delay) * 2);
+}
+.animate__animated.animate__delay-3s {
+  -webkit-animation-delay: calc(1s * 3);
+  animation-delay: calc(1s * 3);
+  -webkit-animation-delay: calc(var(--animate-delay) * 3);
+  animation-delay: calc(var(--animate-delay) * 3);
+}
+.animate__animated.animate__delay-4s {
+  -webkit-animation-delay: calc(1s * 4);
+  animation-delay: calc(1s * 4);
+  -webkit-animation-delay: calc(var(--animate-delay) * 4);
+  animation-delay: calc(var(--animate-delay) * 4);
+}
+.animate__animated.animate__delay-5s {
+  -webkit-animation-delay: calc(1s * 5);
+  animation-delay: calc(1s * 5);
+  -webkit-animation-delay: calc(var(--animate-delay) * 5);
+  animation-delay: calc(var(--animate-delay) * 5);
+}
+.animate__animated.animate__faster {
+  -webkit-animation-duration: calc(1s / 2);
+  animation-duration: calc(1s / 2);
+  -webkit-animation-duration: calc(var(--animate-duration) / 2);
+  animation-duration: calc(var(--animate-duration) / 2);
+}
+.animate__animated.animate__fast {
+  -webkit-animation-duration: calc(1s * 0.8);
+  animation-duration: calc(1s * 0.8);
+  -webkit-animation-duration: calc(var(--animate-duration) * 0.8);
+  animation-duration: calc(var(--animate-duration) * 0.8);
+}
+.animate__animated.animate__slow {
+  -webkit-animation-duration: calc(1s * 2);
+  animation-duration: calc(1s * 2);
+  -webkit-animation-duration: calc(var(--animate-duration) * 2);
+  animation-duration: calc(var(--animate-duration) * 2);
+}
+.animate__animated.animate__slower {
+  -webkit-animation-duration: calc(1s * 3);
+  animation-duration: calc(1s * 3);
+  -webkit-animation-duration: calc(var(--animate-duration) * 3);
+  animation-duration: calc(var(--animate-duration) * 3);
+}
+@media print, (prefers-reduced-motion: reduce) {
+  .animate__animated {
+    -webkit-animation-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    -webkit-transition-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .animate__animated[class*='Out'] {
+    opacity: 0;
+  }
+}
+/* Attention seekers  */
+@-webkit-keyframes bounce {
+  from,
+  20%,
+  53%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0) scaleY(1.1);
+    transform: translate3d(0, -30px, 0) scaleY(1.1);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0) scaleY(1.05);
+    transform: translate3d(0, -15px, 0) scaleY(1.05);
+  }
+
+  80% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0) scaleY(0.95);
+    transform: translate3d(0, 0, 0) scaleY(0.95);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0) scaleY(1.02);
+    transform: translate3d(0, -4px, 0) scaleY(1.02);
+  }
+}
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0) scaleY(1.1);
+    transform: translate3d(0, -30px, 0) scaleY(1.1);
+  }
+
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0) scaleY(1.05);
+    transform: translate3d(0, -15px, 0) scaleY(1.05);
+  }
+
+  80% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0) scaleY(0.95);
+    transform: translate3d(0, 0, 0) scaleY(0.95);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0) scaleY(1.02);
+    transform: translate3d(0, -4px, 0) scaleY(1.02);
+  }
+}
+.animate__bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+@-webkit-keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes flash {
+  from,
+  50%,
+  to {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+.animate__flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.animate__pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes rubberBand {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes rubberBand {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.animate__rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+@-webkit-keyframes shakeX {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+@keyframes shakeX {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+.animate__shakeX {
+  -webkit-animation-name: shakeX;
+  animation-name: shakeX;
+}
+@-webkit-keyframes shakeY {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+}
+@keyframes shakeY {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+}
+.animate__shakeY {
+  -webkit-animation-name: shakeY;
+  animation-name: shakeY;
+}
+@-webkit-keyframes headShake {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  6.5% {
+    -webkit-transform: translateX(-6px) rotateY(-9deg);
+    transform: translateX(-6px) rotateY(-9deg);
+  }
+
+  18.5% {
+    -webkit-transform: translateX(5px) rotateY(7deg);
+    transform: translateX(5px) rotateY(7deg);
+  }
+
+  31.5% {
+    -webkit-transform: translateX(-3px) rotateY(-5deg);
+    transform: translateX(-3px) rotateY(-5deg);
+  }
+
+  43.5% {
+    -webkit-transform: translateX(2px) rotateY(3deg);
+    transform: translateX(2px) rotateY(3deg);
+  }
+
+  50% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes headShake {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  6.5% {
+    -webkit-transform: translateX(-6px) rotateY(-9deg);
+    transform: translateX(-6px) rotateY(-9deg);
+  }
+
+  18.5% {
+    -webkit-transform: translateX(5px) rotateY(7deg);
+    transform: translateX(5px) rotateY(7deg);
+  }
+
+  31.5% {
+    -webkit-transform: translateX(-3px) rotateY(-5deg);
+    transform: translateX(-3px) rotateY(-5deg);
+  }
+
+  43.5% {
+    -webkit-transform: translateX(2px) rotateY(3deg);
+    transform: translateX(2px) rotateY(3deg);
+  }
+
+  50% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.animate__headShake {
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-name: headShake;
+  animation-name: headShake;
+}
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+.animate__swing {
+  -webkit-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+}
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.animate__tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes wobble {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes wobble {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__wobble {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+}
+@-webkit-keyframes jello {
+  from,
+  11.1%,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  22.2% {
+    -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+
+  33.3% {
+    -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+
+  44.4% {
+    -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+
+  55.5% {
+    -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+
+  66.6% {
+    -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+
+  77.7% {
+    -webkit-transform: skewX(0.390625deg) skewY(0.390625deg);
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+
+  88.8% {
+    -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+}
+@keyframes jello {
+  from,
+  11.1%,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  22.2% {
+    -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+    transform: skewX(-12.5deg) skewY(-12.5deg);
+  }
+
+  33.3% {
+    -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+    transform: skewX(6.25deg) skewY(6.25deg);
+  }
+
+  44.4% {
+    -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+    transform: skewX(-3.125deg) skewY(-3.125deg);
+  }
+
+  55.5% {
+    -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+    transform: skewX(1.5625deg) skewY(1.5625deg);
+  }
+
+  66.6% {
+    -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
+    transform: skewX(-0.78125deg) skewY(-0.78125deg);
+  }
+
+  77.7% {
+    -webkit-transform: skewX(0.390625deg) skewY(0.390625deg);
+    transform: skewX(0.390625deg) skewY(0.390625deg);
+  }
+
+  88.8% {
+    -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+  }
+}
+.animate__jello {
+  -webkit-animation-name: jello;
+  animation-name: jello;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+@-webkit-keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  14% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  42% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.animate__heartBeat {
+  -webkit-animation-name: heartBeat;
+  animation-name: heartBeat;
+  -webkit-animation-duration: calc(1s * 1.3);
+  animation-duration: calc(1s * 1.3);
+  -webkit-animation-duration: calc(var(--animate-duration) * 1.3);
+  animation-duration: calc(var(--animate-duration) * 1.3);
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+/* Back entrances */
+@-webkit-keyframes backInDown {
+  0% {
+    -webkit-transform: translateY(-1200px) scale(0.7);
+    transform: translateY(-1200px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    -webkit-transform: translateY(0px) scale(0.7);
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes backInDown {
+  0% {
+    -webkit-transform: translateY(-1200px) scale(0.7);
+    transform: translateY(-1200px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    -webkit-transform: translateY(0px) scale(0.7);
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animate__backInDown {
+  -webkit-animation-name: backInDown;
+  animation-name: backInDown;
+}
+@-webkit-keyframes backInLeft {
+  0% {
+    -webkit-transform: translateX(-2000px) scale(0.7);
+    transform: translateX(-2000px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes backInLeft {
+  0% {
+    -webkit-transform: translateX(-2000px) scale(0.7);
+    transform: translateX(-2000px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animate__backInLeft {
+  -webkit-animation-name: backInLeft;
+  animation-name: backInLeft;
+}
+@-webkit-keyframes backInRight {
+  0% {
+    -webkit-transform: translateX(2000px) scale(0.7);
+    transform: translateX(2000px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes backInRight {
+  0% {
+    -webkit-transform: translateX(2000px) scale(0.7);
+    transform: translateX(2000px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animate__backInRight {
+  -webkit-animation-name: backInRight;
+  animation-name: backInRight;
+}
+@-webkit-keyframes backInUp {
+  0% {
+    -webkit-transform: translateY(1200px) scale(0.7);
+    transform: translateY(1200px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    -webkit-transform: translateY(0px) scale(0.7);
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes backInUp {
+  0% {
+    -webkit-transform: translateY(1200px) scale(0.7);
+    transform: translateY(1200px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    -webkit-transform: translateY(0px) scale(0.7);
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animate__backInUp {
+  -webkit-animation-name: backInUp;
+  animation-name: backInUp;
+}
+/* Back exits */
+@-webkit-keyframes backOutDown {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    -webkit-transform: translateY(0px) scale(0.7);
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: translateY(700px) scale(0.7);
+    transform: translateY(700px) scale(0.7);
+    opacity: 0.7;
+  }
+}
+@keyframes backOutDown {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    -webkit-transform: translateY(0px) scale(0.7);
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: translateY(700px) scale(0.7);
+    transform: translateY(700px) scale(0.7);
+    opacity: 0.7;
+  }
+}
+.animate__backOutDown {
+  -webkit-animation-name: backOutDown;
+  animation-name: backOutDown;
+}
+@-webkit-keyframes backOutLeft {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: translateX(-2000px) scale(0.7);
+    transform: translateX(-2000px) scale(0.7);
+    opacity: 0.7;
+  }
+}
+@keyframes backOutLeft {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: translateX(-2000px) scale(0.7);
+    transform: translateX(-2000px) scale(0.7);
+    opacity: 0.7;
+  }
+}
+.animate__backOutLeft {
+  -webkit-animation-name: backOutLeft;
+  animation-name: backOutLeft;
+}
+@-webkit-keyframes backOutRight {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: translateX(2000px) scale(0.7);
+    transform: translateX(2000px) scale(0.7);
+    opacity: 0.7;
+  }
+}
+@keyframes backOutRight {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    -webkit-transform: translateX(0px) scale(0.7);
+    transform: translateX(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: translateX(2000px) scale(0.7);
+    transform: translateX(2000px) scale(0.7);
+    opacity: 0.7;
+  }
+}
+.animate__backOutRight {
+  -webkit-animation-name: backOutRight;
+  animation-name: backOutRight;
+}
+@-webkit-keyframes backOutUp {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    -webkit-transform: translateY(0px) scale(0.7);
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: translateY(-700px) scale(0.7);
+    transform: translateY(-700px) scale(0.7);
+    opacity: 0.7;
+  }
+}
+@keyframes backOutUp {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  20% {
+    -webkit-transform: translateY(0px) scale(0.7);
+    transform: translateY(0px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    -webkit-transform: translateY(-700px) scale(0.7);
+    transform: translateY(-700px) scale(0.7);
+    opacity: 0.7;
+  }
+}
+.animate__backOutUp {
+  -webkit-animation-name: backOutUp;
+  animation-name: backOutUp;
+}
+/* Bouncing entrances  */
+@-webkit-keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.animate__bounceIn {
+  -webkit-animation-duration: calc(1s * 0.75);
+  animation-duration: calc(1s * 0.75);
+  -webkit-animation-duration: calc(var(--animate-duration) * 0.75);
+  animation-duration: calc(var(--animate-duration) * 0.75);
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+@-webkit-keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0) scaleY(3);
+    transform: translate3d(0, -3000px, 0) scaleY(3);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0) scaleY(0.9);
+    transform: translate3d(0, 25px, 0) scaleY(0.9);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0) scaleY(0.95);
+    transform: translate3d(0, -10px, 0) scaleY(0.95);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0) scaleY(0.985);
+    transform: translate3d(0, 5px, 0) scaleY(0.985);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0) scaleY(3);
+    transform: translate3d(0, -3000px, 0) scaleY(3);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0) scaleY(0.9);
+    transform: translate3d(0, 25px, 0) scaleY(0.9);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0) scaleY(0.95);
+    transform: translate3d(0, -10px, 0) scaleY(0.95);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0) scaleY(0.985);
+    transform: translate3d(0, 5px, 0) scaleY(0.985);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+@-webkit-keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0) scaleX(3);
+    transform: translate3d(-3000px, 0, 0) scaleX(3);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0) scaleX(1);
+    transform: translate3d(25px, 0, 0) scaleX(1);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0) scaleX(0.98);
+    transform: translate3d(-10px, 0, 0) scaleX(0.98);
+  }
+
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0) scaleX(0.995);
+    transform: translate3d(5px, 0, 0) scaleX(0.995);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0) scaleX(3);
+    transform: translate3d(-3000px, 0, 0) scaleX(3);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0) scaleX(1);
+    transform: translate3d(25px, 0, 0) scaleX(1);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0) scaleX(0.98);
+    transform: translate3d(-10px, 0, 0) scaleX(0.98);
+  }
+
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0) scaleX(0.995);
+    transform: translate3d(5px, 0, 0) scaleX(0.995);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+@-webkit-keyframes bounceInRight {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0) scaleX(3);
+    transform: translate3d(3000px, 0, 0) scaleX(3);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0) scaleX(1);
+    transform: translate3d(-25px, 0, 0) scaleX(1);
+  }
+
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0) scaleX(0.98);
+    transform: translate3d(10px, 0, 0) scaleX(0.98);
+  }
+
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0) scaleX(0.995);
+    transform: translate3d(-5px, 0, 0) scaleX(0.995);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInRight {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0) scaleX(3);
+    transform: translate3d(3000px, 0, 0) scaleX(3);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0) scaleX(1);
+    transform: translate3d(-25px, 0, 0) scaleX(1);
+  }
+
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0) scaleX(0.98);
+    transform: translate3d(10px, 0, 0) scaleX(0.98);
+  }
+
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0) scaleX(0.995);
+    transform: translate3d(-5px, 0, 0) scaleX(0.995);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+@-webkit-keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0) scaleY(5);
+    transform: translate3d(0, 3000px, 0) scaleY(5);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0) scaleY(0.9);
+    transform: translate3d(0, -20px, 0) scaleY(0.9);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0) scaleY(0.95);
+    transform: translate3d(0, 10px, 0) scaleY(0.95);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0) scaleY(0.985);
+    transform: translate3d(0, -5px, 0) scaleY(0.985);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0) scaleY(5);
+    transform: translate3d(0, 3000px, 0) scaleY(5);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0) scaleY(0.9);
+    transform: translate3d(0, -20px, 0) scaleY(0.9);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0) scaleY(0.95);
+    transform: translate3d(0, 10px, 0) scaleY(0.95);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0) scaleY(0.985);
+    transform: translate3d(0, -5px, 0) scaleY(0.985);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+/* Bouncing exits  */
+@-webkit-keyframes bounceOut {
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  50%,
+  55% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+@keyframes bounceOut {
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  50%,
+  55% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+}
+.animate__bounceOut {
+  -webkit-animation-duration: calc(1s * 0.75);
+  animation-duration: calc(1s * 0.75);
+  -webkit-animation-duration: calc(var(--animate-duration) * 0.75);
+  animation-duration: calc(var(--animate-duration) * 0.75);
+  -webkit-animation-name: bounceOut;
+  animation-name: bounceOut;
+}
+@-webkit-keyframes bounceOutDown {
+  20% {
+    -webkit-transform: translate3d(0, 10px, 0) scaleY(0.985);
+    transform: translate3d(0, 10px, 0) scaleY(0.985);
+  }
+
+  40%,
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0) scaleY(0.9);
+    transform: translate3d(0, -20px, 0) scaleY(0.9);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0) scaleY(3);
+    transform: translate3d(0, 2000px, 0) scaleY(3);
+  }
+}
+@keyframes bounceOutDown {
+  20% {
+    -webkit-transform: translate3d(0, 10px, 0) scaleY(0.985);
+    transform: translate3d(0, 10px, 0) scaleY(0.985);
+  }
+
+  40%,
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0) scaleY(0.9);
+    transform: translate3d(0, -20px, 0) scaleY(0.9);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0) scaleY(3);
+    transform: translate3d(0, 2000px, 0) scaleY(3);
+  }
+}
+.animate__bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  animation-name: bounceOutDown;
+}
+@-webkit-keyframes bounceOutLeft {
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(20px, 0, 0) scaleX(0.9);
+    transform: translate3d(20px, 0, 0) scaleX(0.9);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-2000px, 0, 0) scaleX(2);
+    transform: translate3d(-2000px, 0, 0) scaleX(2);
+  }
+}
+@keyframes bounceOutLeft {
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(20px, 0, 0) scaleX(0.9);
+    transform: translate3d(20px, 0, 0) scaleX(0.9);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-2000px, 0, 0) scaleX(2);
+    transform: translate3d(-2000px, 0, 0) scaleX(2);
+  }
+}
+.animate__bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft;
+}
+@-webkit-keyframes bounceOutRight {
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(-20px, 0, 0) scaleX(0.9);
+    transform: translate3d(-20px, 0, 0) scaleX(0.9);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0) scaleX(2);
+    transform: translate3d(2000px, 0, 0) scaleX(2);
+  }
+}
+@keyframes bounceOutRight {
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(-20px, 0, 0) scaleX(0.9);
+    transform: translate3d(-20px, 0, 0) scaleX(0.9);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0) scaleX(2);
+    transform: translate3d(2000px, 0, 0) scaleX(2);
+  }
+}
+.animate__bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  animation-name: bounceOutRight;
+}
+@-webkit-keyframes bounceOutUp {
+  20% {
+    -webkit-transform: translate3d(0, -10px, 0) scaleY(0.985);
+    transform: translate3d(0, -10px, 0) scaleY(0.985);
+  }
+
+  40%,
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 20px, 0) scaleY(0.9);
+    transform: translate3d(0, 20px, 0) scaleY(0.9);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0) scaleY(3);
+    transform: translate3d(0, -2000px, 0) scaleY(3);
+  }
+}
+@keyframes bounceOutUp {
+  20% {
+    -webkit-transform: translate3d(0, -10px, 0) scaleY(0.985);
+    transform: translate3d(0, -10px, 0) scaleY(0.985);
+  }
+
+  40%,
+  45% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 20px, 0) scaleY(0.9);
+    transform: translate3d(0, 20px, 0) scaleY(0.9);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0) scaleY(3);
+    transform: translate3d(0, -2000px, 0) scaleY(3);
+  }
+}
+.animate__bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+}
+/* Fading entrances  */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.animate__fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+@-webkit-keyframes fadeInDownBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInDownBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig;
+}
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+@-webkit-keyframes fadeInLeftBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    transform: translate3d(-2000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInLeftBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    transform: translate3d(-2000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig;
+}
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+@-webkit-keyframes fadeInRightBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInRightBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig;
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+@-webkit-keyframes fadeInUpBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInUpBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
+}
+@-webkit-keyframes fadeInTopLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, -100%, 0);
+    transform: translate3d(-100%, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInTopLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, -100%, 0);
+    transform: translate3d(-100%, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInTopLeft {
+  -webkit-animation-name: fadeInTopLeft;
+  animation-name: fadeInTopLeft;
+}
+@-webkit-keyframes fadeInTopRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, -100%, 0);
+    transform: translate3d(100%, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInTopRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, -100%, 0);
+    transform: translate3d(100%, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInTopRight {
+  -webkit-animation-name: fadeInTopRight;
+  animation-name: fadeInTopRight;
+}
+@-webkit-keyframes fadeInBottomLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 100%, 0);
+    transform: translate3d(-100%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInBottomLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 100%, 0);
+    transform: translate3d(-100%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInBottomLeft {
+  -webkit-animation-name: fadeInBottomLeft;
+  animation-name: fadeInBottomLeft;
+}
+@-webkit-keyframes fadeInBottomRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 100%, 0);
+    transform: translate3d(100%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInBottomRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 100%, 0);
+    transform: translate3d(100%, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInBottomRight {
+  -webkit-animation-name: fadeInBottomRight;
+  animation-name: fadeInBottomRight;
+}
+/* Fading exits */
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+.animate__fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+.animate__fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+@-webkit-keyframes fadeOutDownBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+}
+@keyframes fadeOutDownBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+}
+.animate__fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig;
+}
+@-webkit-keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.animate__fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+@-webkit-keyframes fadeOutLeftBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    transform: translate3d(-2000px, 0, 0);
+  }
+}
+@keyframes fadeOutLeftBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    transform: translate3d(-2000px, 0, 0);
+  }
+}
+.animate__fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig;
+}
+@-webkit-keyframes fadeOutRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+.animate__fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+}
+@-webkit-keyframes fadeOutRightBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+}
+@keyframes fadeOutRightBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+}
+.animate__fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig;
+}
+@-webkit-keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+.animate__fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+@-webkit-keyframes fadeOutUpBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+@keyframes fadeOutUpBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+.animate__fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig;
+}
+@-webkit-keyframes fadeOutTopLeft {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, -100%, 0);
+    transform: translate3d(-100%, -100%, 0);
+  }
+}
+@keyframes fadeOutTopLeft {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, -100%, 0);
+    transform: translate3d(-100%, -100%, 0);
+  }
+}
+.animate__fadeOutTopLeft {
+  -webkit-animation-name: fadeOutTopLeft;
+  animation-name: fadeOutTopLeft;
+}
+@-webkit-keyframes fadeOutTopRight {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, -100%, 0);
+    transform: translate3d(100%, -100%, 0);
+  }
+}
+@keyframes fadeOutTopRight {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, -100%, 0);
+    transform: translate3d(100%, -100%, 0);
+  }
+}
+.animate__fadeOutTopRight {
+  -webkit-animation-name: fadeOutTopRight;
+  animation-name: fadeOutTopRight;
+}
+@-webkit-keyframes fadeOutBottomRight {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 100%, 0);
+    transform: translate3d(100%, 100%, 0);
+  }
+}
+@keyframes fadeOutBottomRight {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 100%, 0);
+    transform: translate3d(100%, 100%, 0);
+  }
+}
+.animate__fadeOutBottomRight {
+  -webkit-animation-name: fadeOutBottomRight;
+  animation-name: fadeOutBottomRight;
+}
+@-webkit-keyframes fadeOutBottomLeft {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 100%, 0);
+    transform: translate3d(-100%, 100%, 0);
+  }
+}
+@keyframes fadeOutBottomLeft {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 100%, 0);
+    transform: translate3d(-100%, 100%, 0);
+  }
+}
+.animate__fadeOutBottomLeft {
+  -webkit-animation-name: fadeOutBottomLeft;
+  animation-name: fadeOutBottomLeft;
+}
+/* Flippers */
+@-webkit-keyframes flip {
+  from {
+    -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -190deg);
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -190deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -170deg);
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -170deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+      rotate3d(0, 1, 0, 0deg);
+    transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+      rotate3d(0, 1, 0, 0deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes flip {
+  from {
+    -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -190deg);
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -190deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -170deg);
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px)
+      rotate3d(0, 1, 0, -170deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+      rotate3d(0, 1, 0, 0deg);
+    transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0)
+      rotate3d(0, 1, 0, 0deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+    transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+.animate__animated.animate__flip {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-animation-name: flip;
+  animation-name: flip;
+}
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+.animate__flipInX {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+@-webkit-keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+@keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+.animate__flipInY {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+}
+@-webkit-keyframes flipOutX {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+@keyframes flipOutX {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+.animate__flipOutX {
+  -webkit-animation-duration: calc(1s * 0.75);
+  animation-duration: calc(1s * 0.75);
+  -webkit-animation-duration: calc(var(--animate-duration) * 0.75);
+  animation-duration: calc(var(--animate-duration) * 0.75);
+  -webkit-animation-name: flipOutX;
+  animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+}
+@-webkit-keyframes flipOutY {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+}
+@keyframes flipOutY {
+  from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+}
+.animate__flipOutY {
+  -webkit-animation-duration: calc(1s * 0.75);
+  animation-duration: calc(1s * 0.75);
+  -webkit-animation-duration: calc(var(--animate-duration) * 0.75);
+  animation-duration: calc(var(--animate-duration) * 0.75);
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  animation-name: flipOutY;
+}
+/* Lightspeed */
+@-webkit-keyframes lightSpeedInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes lightSpeedInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__lightSpeedInRight {
+  -webkit-animation-name: lightSpeedInRight;
+  animation-name: lightSpeedInRight;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+@-webkit-keyframes lightSpeedInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0) skewX(30deg);
+    transform: translate3d(-100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(5deg);
+    transform: skewX(5deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes lightSpeedInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0) skewX(30deg);
+    transform: translate3d(-100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: skewX(5deg);
+    transform: skewX(5deg);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__lightSpeedInLeft {
+  -webkit-animation-name: lightSpeedInLeft;
+  animation-name: lightSpeedInLeft;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+@-webkit-keyframes lightSpeedOutRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(30deg);
+    transform: translate3d(100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+}
+@keyframes lightSpeedOutRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(30deg);
+    transform: translate3d(100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+}
+.animate__lightSpeedOutRight {
+  -webkit-animation-name: lightSpeedOutRight;
+  animation-name: lightSpeedOutRight;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+@-webkit-keyframes lightSpeedOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate3d(-100%, 0, 0) skewX(-30deg);
+    transform: translate3d(-100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+}
+@keyframes lightSpeedOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate3d(-100%, 0, 0) skewX(-30deg);
+    transform: translate3d(-100%, 0, 0) skewX(-30deg);
+    opacity: 0;
+  }
+}
+.animate__lightSpeedOutLeft {
+  -webkit-animation-name: lightSpeedOutLeft;
+  animation-name: lightSpeedOutLeft;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+/* Rotating entrances */
+@-webkit-keyframes rotateIn {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes rotateIn {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animate__rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+@-webkit-keyframes rotateInDownLeft {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInDownLeft {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animate__rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+@-webkit-keyframes rotateInDownRight {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInDownRight {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animate__rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes rotateInUpLeft {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInUpLeft {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animate__rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+@-webkit-keyframes rotateInUpRight {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, -90deg);
+    transform: rotate3d(0, 0, 1, -90deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes rotateInUpRight {
+  from {
+    -webkit-transform: rotate3d(0, 0, 1, -90deg);
+    transform: rotate3d(0, 0, 1, -90deg);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animate__rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+/* Rotating exits */
+@-webkit-keyframes rotateOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 200deg);
+    transform: rotate3d(0, 0, 1, 200deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 200deg);
+    transform: rotate3d(0, 0, 1, 200deg);
+    opacity: 0;
+  }
+}
+.animate__rotateOut {
+  -webkit-animation-name: rotateOut;
+  animation-name: rotateOut;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+}
+@-webkit-keyframes rotateOutDownLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutDownLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
+  }
+}
+.animate__rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+@-webkit-keyframes rotateOutDownRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutDownRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+    opacity: 0;
+  }
+}
+.animate__rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes rotateOutUpLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutUpLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+    opacity: 0;
+  }
+}
+.animate__rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+@-webkit-keyframes rotateOutUpRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+    opacity: 0;
+  }
+}
+@keyframes rotateOutUpRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+    opacity: 0;
+  }
+}
+.animate__rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+/* Specials */
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%,
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 80deg);
+    transform: rotate3d(0, 0, 1, 80deg);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  40%,
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, 60deg);
+    transform: rotate3d(0, 0, 1, 60deg);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 700px, 0);
+    transform: translate3d(0, 700px, 0);
+    opacity: 0;
+  }
+}
+@keyframes hinge {
+  0% {
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%,
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 80deg);
+    transform: rotate3d(0, 0, 1, 80deg);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  40%,
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, 60deg);
+    transform: rotate3d(0, 0, 1, 60deg);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 700px, 0);
+    transform: translate3d(0, 700px, 0);
+    opacity: 0;
+  }
+}
+.animate__hinge {
+  -webkit-animation-duration: calc(1s * 2);
+  animation-duration: calc(1s * 2);
+  -webkit-animation-duration: calc(var(--animate-duration) * 2);
+  animation-duration: calc(var(--animate-duration) * 2);
+  -webkit-animation-name: hinge;
+  animation-name: hinge;
+  -webkit-transform-origin: top left;
+  transform-origin: top left;
+}
+@-webkit-keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1) rotate(30deg);
+    transform: scale(0.1) rotate(30deg);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+
+  50% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.animate__jackInTheBox {
+  -webkit-animation-name: jackInTheBox;
+  animation-name: jackInTheBox;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes rollIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__rollIn {
+  -webkit-animation-name: rollIn;
+  animation-name: rollIn;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes rollOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+}
+@keyframes rollOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+  }
+}
+.animate__rollOut {
+  -webkit-animation-name: rollOut;
+  animation-name: rollOut;
+}
+/* Zooming entrances */
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+.animate__zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+@-webkit-keyframes zoomInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+@keyframes zoomInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+.animate__zoomInDown {
+  -webkit-animation-name: zoomInDown;
+  animation-name: zoomInDown;
+}
+@-webkit-keyframes zoomInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+@keyframes zoomInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+.animate__zoomInLeft {
+  -webkit-animation-name: zoomInLeft;
+  animation-name: zoomInLeft;
+}
+@-webkit-keyframes zoomInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+@keyframes zoomInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+.animate__zoomInRight {
+  -webkit-animation-name: zoomInRight;
+  animation-name: zoomInRight;
+}
+@-webkit-keyframes zoomInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+@keyframes zoomInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+.animate__zoomInUp {
+  -webkit-animation-name: zoomInUp;
+  animation-name: zoomInUp;
+}
+/* Zooming exits */
+@-webkit-keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+.animate__zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+}
+@-webkit-keyframes zoomOutDown {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+@keyframes zoomOutDown {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+.animate__zoomOutDown {
+  -webkit-animation-name: zoomOutDown;
+  animation-name: zoomOutDown;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+@-webkit-keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translate3d(-2000px, 0, 0);
+    transform: scale(0.1) translate3d(-2000px, 0, 0);
+  }
+}
+@keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translate3d(-2000px, 0, 0);
+    transform: scale(0.1) translate3d(-2000px, 0, 0);
+  }
+}
+.animate__zoomOutLeft {
+  -webkit-animation-name: zoomOutLeft;
+  animation-name: zoomOutLeft;
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+}
+@-webkit-keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translate3d(2000px, 0, 0);
+    transform: scale(0.1) translate3d(2000px, 0, 0);
+  }
+}
+@keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale(0.1) translate3d(2000px, 0, 0);
+    transform: scale(0.1) translate3d(2000px, 0, 0);
+  }
+}
+.animate__zoomOutRight {
+  -webkit-animation-name: zoomOutRight;
+  animation-name: zoomOutRight;
+  -webkit-transform-origin: right center;
+  transform-origin: right center;
+}
+@-webkit-keyframes zoomOutUp {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+@keyframes zoomOutUp {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+.animate__zoomOutUp {
+  -webkit-animation-name: zoomOutUp;
+  animation-name: zoomOutUp;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+/* Sliding entrances */
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+/* Sliding exits */
+@-webkit-keyframes slideOutDown {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes slideOutDown {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+.animate__slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+}
+@-webkit-keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.animate__slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+}
+@-webkit-keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+.animate__slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+@-webkit-keyframes slideOutUp {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@keyframes slideOutUp {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+.animate__slideOutUp {
+  -webkit-animation-name: slideOutUp;
+  animation-name: slideOutUp;
+}
+</style><script type="module" src="./dotlottie-player.js.Без названия"></script><style>
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://editor.bdecdn.com/public/montserrat-font/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 500 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('https://editor.bdecdn.com/public/montserrat-font/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 500 900;
+  font-style: italic;
+}
+</style><link rel="stylesheet" href="./bootstrap-icons.css"><link rel="stylesheet" href="./lucide.css"><link rel="stylesheet" href="./bde-icons.a783f870b9cd.css"></head>
+<body style="background: rgba(0, 0, 0, 0);">
+<section id="bde-description" aria-labelledby="bde-description-title">
+    <h1 id="bde-description-title">BDEngine - Minecraft Display Entity Editor &amp; Animator</h1>
+    <p>BDEngine is a free display entity editor for Minecraft Java Edition. Create and animate models without mods or resource packs. Export commands and datapacks.</p>
+    <nav aria-label="BDEngine resources">
+        <ul>
+            <li><a href="https://www.block-display.com/editor">Product overview</a></li>
+            <li><a href="https://www.block-display.com/browse">Model catalog</a></li>
+            <li><a href="https://block-display.com/bde-guides">BDEngine guides</a></li>
+            <li><a href="https://bdengine.app/llms.txt">BDEngine information index</a></li>
+            <li><a href="https://bdengine.app/llms-full.txt">Full BDEngine overview</a></li>
+        </ul>
+    </nav>
+</section>
+<div id="backload" style="position: absolute;width: 100vw;height: 100vh;z-index: 9999;pointer-events: none;display: flex;justify-content: center;align-items: center;background: #000;" class="animate__animated animate__faster">
+    <div style="text-align: center;position: absolute;bottom: 20px;color: #2f2f2f;display: flex;flex-direction: column;align-items: center;gap: 10px;">
+        <div style="opacity: 0.2;color: #fff;">
+            <div>Loading taking too long?</div>
+            <div>Check the <a style="text-decoration: underline;pointer-events: auto;" href="https://status.illystray.com/" target="_blank">server status</a></div>
+        </div>
+        <img class="backLoad-subLogo" src="./ill_l_256.webp">
+    </div>
+    <div style="--animate-duration: 20s;display: flex;justify-content: center;align-items: center;position: relative;">
+        <div class="backLoad-mainLogo">
+            <div>
+            </div>
+            <div style="opacity: 0;">
+                <div class="bdeLogo"></div>
+            </div>
+        </div>
+        <div class="animate__animated animate__fadeIn" style="white-space: nowrap;--animate-duration: 0.5s;opacity: 0;display: flex;justify-content: center;position: absolute;bottom: -100px;">
+            <span id="backload_loading_text" style="opacity: 0.2;"></span>
+        </div>
+    </div>
+</div>
+<div id="backload1" style="position: absolute;width: 100vw;height: 100vh;z-index: 98;pointer-events: none;display: flex;justify-content: center;align-items: center;background: #000;" class="animate__animated animate__faster"></div>
+<div class="vertical-panel" id="top-vertical-panel" style="display: none;">
+    <div style="display: flex;" id="vertical_tool"><button><div class="name" style="display: flex;gap: 5px;align-items: center;"><div class="bdeLogo" style="width: 14px;height: 14px;background: #d5d5d5;"></div><span class="vertical-tool-title">BDEngine</span></div></button><hr><div class="dropdown"><button aria-haspopup="menu" aria-expanded="false" aria-controls="vertical-menu-1"><div class="name "><span class="vertical-tool-title">Файл</span></div></button><div class="dropdown-content" id="vertical-menu-1" inert=""><button><div class="name add-d-flex"><span class="vertical-tool-title"><i class="icon-file-plus-corner" aria-hidden="true"></i>Новый проект</span><span class="shortcut" id="key_newProject">N</span></div></button><button><div class="name add-d-flex"><span class="vertical-tool-title"><i class="icon-cloud" aria-hidden="true"></i>Открыть с облака</span><span class="shortcut" id="key_openCloudProject">O</span></div></button><button><div class="name add-d-flex"><span class="vertical-tool-title"><i class="icon-folder-closed" aria-hidden="true"></i>Открыть с устройства</span><span class="shortcut" id="key_openFileProject">Ctrl + O</span></div></button><hr class="dropdown-divider"><button><div class="name "><span class="vertical-tool-title"><i class="icon-history" aria-hidden="true"></i>Последняя сессия</span></div></button><hr class="dropdown-divider"><button><div class="name add-d-flex"><span class="vertical-tool-title"><i class="icon-save" aria-hidden="true"></i>Сохранить в облако</span><span class="shortcut" id="key_saveCloudProject">Ctrl + S</span></div></button><button><div class="name add-d-flex"><span class="vertical-tool-title"><i aria-hidden="true"></i>Сохранить на устройство</span><span class="shortcut" id="key_saveFileProject">Ctrl + Shift + S</span></div></button><button><div class="name add-d-flex"><span class="vertical-tool-title"><i aria-hidden="true"></i>Сохранить на устройство как..</span><span class="shortcut" id="key_saveFileProject">Ctrl + Shift + S</span></div></button><hr class="dropdown-divider"><div class="dropdown-submenu"><button aria-haspopup="menu" aria-expanded="false" aria-controls="vertical-menu-2"><div class="name add-d-flex"><span class="vertical-tool-title"><i class="icon-square-arrow-right-enter" aria-hidden="true"></i>Импорт</span><i class="icon-chevron-right dropdown-submenu-arrow" aria-hidden="true"></i></div></button><div class="dropdown-content" id="vertical-menu-2" inert=""><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Litematic (.litematic)</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Schematic (.schematic)</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Schem (.schem)</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Импорт витрины (.bdshowcase)</span></div></button></div></div><div class="dropdown-submenu"><button aria-haspopup="menu" aria-expanded="false" aria-controls="vertical-menu-3"><div class="name add-d-flex"><span class="vertical-tool-title"><i class="icon-square-arrow-right-exit" aria-hidden="true"></i>Экспорт</span><i class="icon-chevron-right dropdown-submenu-arrow" aria-hidden="true"></i></div></button><div class="dropdown-content" id="vertical-menu-3" inert=""><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Экспорт в Minecraft</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Экспорт витрины (.bdshowcase)</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>JSON (.json)</span></div></button></div></div><hr class="dropdown-divider"><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Опубликовать</span></div></button></div></div><div class="dropdown"><button aria-haspopup="menu" aria-expanded="false" aria-controls="vertical-menu-4"><div class="name "><span class="vertical-tool-title">Редактировать</span></div></button><div class="dropdown-content" id="vertical-menu-4" inert=""><button disabled=""><div class="name add-d-flex"><span class="vertical-tool-title"><i class="icon-rotate-ccw" aria-hidden="true"></i>Отменить</span><span class="shortcut" id="key_undo">Ctrl + Z</span></div></button><button disabled=""><div class="name add-d-flex"><span class="vertical-tool-title"><i class="icon-rotate-cw" aria-hidden="true"></i>Повторить</span><span class="shortcut" id="key_redo">Ctrl + Y</span></div></button><hr class="dropdown-divider"><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>История сохранений</span></div></button><hr class="dropdown-divider"><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Статистика сцены</span></div></button><button><div class="name "><span class="vertical-tool-title"><i class="icon-cog" aria-hidden="true"></i>Настройки редактора</span></div></button></div></div><div class="dropdown"><button aria-haspopup="menu" aria-expanded="false" aria-controls="vertical-menu-5"><div class="name "><span class="vertical-tool-title">Помощь</span></div></button><div class="dropdown-content" id="vertical-menu-5" inert=""><button><div class="name "><span class="vertical-tool-title"><i class="icon-globe" aria-hidden="true"></i>Руководство</span></div></button><button><div class="name "><span class="vertical-tool-title"><i class="icon-globe" aria-hidden="true"></i>Сообщество Discord</span></div></button><button><div class="name "><span class="vertical-tool-title"><i class="icon-globe" aria-hidden="true"></i>Сообщество Telegram</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Введение в BDEngine</span></div></button><hr class="dropdown-divider"><button><div class="name "><span class="vertical-tool-title"><i class="icon-globe" aria-hidden="true"></i>Список изменений</span></div></button><button><div class="name "><span class="vertical-tool-title"><i class="icon-globe" aria-hidden="true"></i>Помочь с переводом</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Поддержать BDEngine</span></div></button><hr class="dropdown-divider"><button><div class="name "><span class="vertical-tool-title"><i class="icon-globe" aria-hidden="true"></i>Статус серверов</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Сообщить о проблеме</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Запустить самодиагностику</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Логи редактора</span></div></button><button><div class="name "><span class="vertical-tool-title"><i aria-hidden="true"></i>Перезагрузить редактор</span></div></button><hr class="dropdown-divider"><button><div class="name "><span class="vertical-tool-title"><i class="icon-globe" aria-hidden="true"></i>BDEngine EULA</span></div></button><button><div class="name "><span class="vertical-tool-title"><i class="icon-globe" aria-hidden="true"></i>Условия пользования</span></div></button><button><div class="name "><span class="vertical-tool-title"><i class="icon-globe" aria-hidden="true"></i>Политика конфиденциальности</span></div></button></div></div><hr><button><div class="name "><span class="vertical-tool-title">Экспорт в Minecraft</span></div></button><button><div class="name "><span class="vertical-tool-title">Каталог моделей</span></div></button></div>
+    <div style="flex: 1;height: 100%;-webkit-app-region: drag;app-region: drag;"></div>
+    <div id="user_account">
+            
+        <a id="header-download" title="Скачать приложение" aria-label="Скачать приложение"><i class="icon-download"></i></a>
+        <a id="header-settings" target="_blank"><i class="icon-cog"></i></a>
+    
+            <button style="padding-top: 1px;color: inherit;text-decoration: none;gap: 5px;">Sign In</button>
+        </div>
+</div>
+<div class="editor-panel" style="padding: 0px; flex-direction: row;">
+    <div class="left-panel">
+        <main class="main-panel main-panel-outline" id="editor" style="margin: 0px; border-radius: 0px; background: rgba(0, 0, 0, 0);">
+            <div class="pivot-marker" id="pivot_marker" style="display: none;"></div>
+            <div id="drop_zone"><i class="bi bi-cloud-arrow-up"></i>
+                <div id="drop_zone_text"></div>
+            </div>
+            <div id="GUI">
+                <canvas id="viewHelper" width="128" height="128"></canvas>
+                <div id="left_tool_strip" style="inset: 50% auto auto 10px; transform: translateY(-50%);"><button aria-label="Отменить действие" disabled="" data-sound-added="true"><i class="icon-rotate-ccw"></i><span>Отменить действие<span>Клавиши: Ctrl + Z</span></span></button><button aria-label="Повторить действие" disabled="" data-sound-added="true"><i class="icon-rotate-cw"></i><span>Повторить действие<span>Клавиши: Ctrl + Y</span></span></button><div style="margin-bottom: 2px;"></div><button aria-label="Перемещение" class="controlMode-active" data-sound-added="true"><i class="icon-move"></i><span>Перемещение<span>Клавиша: T</span></span></button><button aria-label="Вращение" data-sound-added="true"><i class="icon-refresh-cw"></i><span>Вращение<span>Клавиша: R</span></span></button><button aria-label="Масштабирование" data-sound-added="true"><i class="icon-move-diagonal"></i><span>Масштабирование<span>Клавиша: S</span></span></button><button aria-label="Скос" data-sound-added="true"><i class="icon-diamond"></i><span>Скос<span>Клавиша: Y</span></span></button><div style="margin-bottom: 2px;"></div><button aria-label="Пивот объекта" data-sound-added="true"><i class="iconbde-pivot-object"></i><span>Пивот объекта<span>Клавиша: Z</span></span></button><button aria-label="Мировые оси" data-sound-added="true"><i class="iconbde-space-world"></i><span>Мировые оси<span>Клавиша: X</span></span></button><div style="margin-bottom: 2px;"></div></div>
+                <div id="right_tool_strip" style="left: auto; right: 10px;"></div>
+                <div id="window_manager"></div>
+                <div id="top_container" style="display: none;">
+                    <div id="dockbar" class="dockbar"><a style="display: none;"><i class="icon-search"></i><span>Каталог</span></a><a class="top-container-control"><i class="icon-layout-grid"></i><span>Приложения</span></a><div></div><section class="dockbar-creation" style="width: 180px;"><a role="button" aria-label="Блоки" tabindex="0"><i class="icon-box"></i><span>Блоки</span></a><a role="button" aria-label="Предметы" tabindex="0"><i class="icon-pickaxe"></i><span>Предметы</span></a><a role="button" aria-label="Головы" tabindex="0"><i class="iconbde-player-head-finder"></i><span>Головы</span></a><section class="dockbar-collapsible" style="width: 0px;"><a role="button" aria-label="Создать голову" aria-hidden="true" tabindex="-1" class="dockbar-hideButton" style="display: none;"><i class="iconbde-player-head"></i><span>Создать голову</span></a><a role="button" aria-label="Текст" aria-hidden="true" tabindex="-1" class="dockbar-hideButton" style="display: none;"><i class="icon-type"></i><span>Текст</span></a><a role="button" aria-label="Хитбокс" aria-hidden="true" tabindex="-1" class="dockbar-hideButton" style="display: none;"><i class="icon-vector-square"></i><span>Хитбокс</span></a><a role="button" aria-label="Интерактив" aria-hidden="true" tabindex="-1" class="dockbar-hideButton" style="display: none;"><i class="icon-square-mouse-pointer"></i><span>Интерактив</span></a><a role="button" aria-label="Сиденье" aria-hidden="true" tabindex="-1" class="dockbar-hideButton" style="display: none;"><i class="icon-armchair"></i><span>Сиденье</span></a><a role="button" aria-label="Частица" aria-hidden="true" tabindex="-1" class="dockbar-hideButton" style="display: none;"><i class="icon-sparkles"></i><span>Частица</span></a></section><a class="dockbar-overflow-button" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="Другие объекты" aria-controls="dockbar-overflow-menu" aria-hidden="false" tabindex="0"><i class="icon-plus"></i><span>Другие объекты</span></a></section><a class="dockbar-resizer icon-ellipsis-vertical" tabindex="0" role="separator" aria-orientation="vertical" aria-label="Ширина панели создания объектов" title="Потяните для изменения ширины. Двойной клик - развернуть или свернуть." aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"></a><a><i class="icon-brush"></i><span>Head Paint</span></a><a><i class="icon-camera"></i><span>Скриншот</span></a><a><i class="icon-gamepad-2"></i><span>Погружение</span></a><a><i class="icon-users-round"></i><span>Творить вместе</span></a><div></div><a class="top-container-control disabled"><i class="icon-copy-plus"></i><span>Дублировать</span></a><a class="disabled"><i class="icon-group"></i><span>Группировать</span></a><a class="top-container-control disabled"><i class="icon-trash"></i><span>Удалить</span></a><section class="dockbar_menu_div dockbar-overflow-menu" inert="" id="dockbar-overflow-menu" role="menu" aria-label="Другие объекты"><a role="menuitem" aria-disabled="false" tabindex="0"><i class="iconbde-player-head"></i>Создать голову</a><a role="menuitem" aria-disabled="false" tabindex="0"><i class="icon-type"></i>Текст</a><a role="menuitem" aria-disabled="false" tabindex="0"><i class="icon-vector-square"></i>Хитбокс</a><a role="menuitem" aria-disabled="false" tabindex="0"><i class="icon-square-mouse-pointer"></i>Интерактив</a><a role="menuitem" aria-disabled="false" tabindex="0"><i class="icon-armchair"></i>Сиденье</a><a role="menuitem" aria-disabled="false" tabindex="0"><i class="icon-sparkles"></i>Частица</a></section></div>
+                    <div id="dockbar_menu" class="dockbar"><div class="dockbar_menu_div"><a><i class="icon-image"></i>Изображение референс</a><a><i class="icon-video"></i>Видео референс</a><a><i class="icon-chart-no-axes-column-increasing"></i>Статистика сцены</a><a><i class="icon-monitor-smartphone"></i>Трекинг камеры</a><a><i class="icon-link"></i>Live Link</a><a><i class="icon-person-standing"></i>Motion Capture</a></div><a><i class="icon-align-justify"></i></a></div>
+                    <div id="dockbar_tracking" class="dockbar dockbar-tracking-hide" style="padding: 2px 20px;overflow: hidden;transition: all 0.5s cubic-bezier(0.21, 0.49, 0.13, 1);width: 90px;"><a class="toolsActive" style="display: flex; align-items: center; line-height: 1; gap: 10px;"><i class="icon-monitor-smartphone" style="width: auto;"></i><div>Трекинг</div></a></div>
+                </div>
+                <div id="top_container2"></div>
+                <div id="bottom_container" style="display: none;">
+        <div id="fileMobile-button"><a>Файл</a></div>
+        <div id="assets-button" style="transition: 0.5s cubic-bezier(0.21, 0.49, 0.13, 1); overflow: hidden; width: 177.6px;"><a style="flex: 1;display: flex;justify-content: center;">Библиотека ассетов</a></div>
+        <div class="button-switch-mode">
+            <a id="switch_editor" class="bde-currentMode">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move3d-icon lucide-move-3d">
+                    <path d="M5 3v16h16"></path>
+                    <path d="m5 19 6-6"></path>
+                    <path d="m2 6 3-3 3 3"></path>
+                    <path d="m18 16 3 3-3 3"></path>
+                </svg>
+                <div>Редактор</div>
+                <span>Редактор</span>
+            </a>
+            <a id="switch_animator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock4-icon lucide-clock-4">
+                    <path d="M12 6v6l4 2"></path>
+                    <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <div>Анимировать</div>
+                <span>Анимировать</span>
+            </a>
+            <a id="switch_sound">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume2-icon lucide-volume-2">
+                    <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path>
+                    <path d="M16 9a5 5 0 0 1 0 6"></path>
+                    <path d="M19.364 18.364a9 9 0 0 0 0-12.728"></path>
+                </svg>
+                <div>Звуки</div>
+                <span>Звуки</span>
+            </a>
+            <a id="switch_structure">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-castle-icon lucide-castle">
+                    <path d="M10 5V3"></path>
+                    <path d="M14 5V3"></path>
+                    <path d="M15 21v-3a3 3 0 0 0-6 0v3"></path>
+                    <path d="M18 3v8"></path>
+                    <path d="M18 5H6"></path>
+                    <path d="M22 11H2"></path>
+                    <path d="M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9"></path>
+                    <path d="M6 3v8"></path>
+                </svg>
+                <div>Структуры</div>
+                <span>Структуры</span>
+            </a>
+            <a id="switch_modeling" style="opacity: .5;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cuboid preview-icon"><path d="M10 22v-8"></path><path d="M2.336 8.89 10 14l11.715-7.029"></path><path d="M22 14a2 2 0 0 1-.971 1.715l-10 6a2 2 0 0 1-2.138-.05l-6-4A2 2 0 0 1 2 16v-6a2 2 0 0 1 .971-1.715l10-6a2 2 0 0 1 2.138.05l6 4A2 2 0 0 1 22 8z"></path></svg>
+                <div>Modeling</div>
+                <span>Modeling <span style="font-weight: 700;">Soon</span></span>
+            </a>
+            <a id="switch_function">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal-icon lucide-terminal">
+                    <path d="M12 19h8"></path>
+                    <path d="m4 17 6-6-6-6"></path>
+                </svg>
+                <div>Датапак</div>
+                <span>Датапак</span>
+            </a>
+        </div>
+        <div id="exportMine-button"><a>Экспорт в Minecraft</a></div>
+        </div>
+            </div>
+            <div style="position: absolute;width: 100%;height: 100%;box-shadow: inset 0 0 100px #0000002e;pointer-events: none;z-index: 0;"></div>
+            <canvas id="render" class="renderRT"></canvas>
+            <canvas id="canvas" data-engine="three.js r173" width="1427" height="497" style="margin: 0px; border-radius: 0px; background: rgba(0, 0, 0, 0); width: 1142px; height: 398px; touch-action: none;"></canvas>
+            <div class="notify" id="notify" style="bottom: 0px;"></div>
+            <div class="func func-hidden" id="func">
+            <div class="func-wrap">
+                <div class="func-left" data-func-type="root">
+                    <div id="func-left-resizer" class="func-left-resizer"><i class="lucide icon-ellipsis-vertical"></i></div>
+                    <div class="func-title"><i class="icon-folder"></i>Функции Датапака</div>
+                    <div class="func-tree" data-func-type="root"><div class="func-folder" data-func-type="root" data-func-path=""><div class="func-folder-header" draggable="false"><span class="func-folder-name">Func <span style="opacity: .5;">Корневая папка</span></span><span class="func-folder-tools"><a class="icon-folder-plus"></a><a class="icon-file-plus"></a></span></div><div class="func-folder-children"><div class="func-folder-empty">Здесь пока ничего нет. Создайте свою первую папку или файл, щелкнув ПКМ.</div></div></div></div>
+                </div>
+                <div class="func-right">
+                    <div class="func-tabs" data-func-type="tabs"></div>
+                    <div class="func-editor" style="position: relative;">
+                        <div class="func-code-editor" style="display: none;">
+                            <pre class="func-highlight-layer" aria-hidden="true" hidden=""></pre><textarea class="func-editor-area" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Начните вводить команды здесь. Например, say Привет!" readonly="readonly" style="display: none;"></textarea>
+                        </div>
+                        <div class="func-blueprint-area" tabindex="0" style="display: none;">
+                            <div class="func-blueprint-overlay-info">Это ранняя экспериментальная версия редактора MCFunction на основе блюпринтов. Экспорт пока не поддерживается; функция предназначена только для тестирования.</div>
+                            <div class="func-blueprint-overlay"></div>
+                            <div class="func-blueprint-drawflow"><svg class="func-blueprint-connections" aria-hidden="true"><g></g><path class="func-blueprint-connection func-blueprint-connection-preview" style="display: none;"></path></svg><div class="func-blueprint-nodes"></div></div>
+                        </div>
+                        <div class="func-suggest" style="display: none;"></div>
+                        <div class="func-measure" style="position:absolute;visibility:hidden;white-space:pre-wrap;top:0;left:0;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start customModelGUI"><div class="title" role="button" aria-expanded="true" tabindex="0">
+            <span>Custom Models</span>
+        </div><div class="children" style="display: flex;gap: 20px;"><div style="display: flex;flex-direction: column;gap: 10px;max-height: 383px;width: 310px;"><button>New Model</button><div class="listObjectsType4"><div style="font-size: 12px;opacity: 0.7;justify-content: center;">No custom models yet</div></div></div><div class="panelType_content" style="transition: 0.5s cubic-bezier(0, 0, 0, 1);"><div><div class="lil-gui root"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span></span></div><div class="children"><div class="lil-gui"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span>Basic</span></div><div class="children controller-stack"><div class="controller string"><div class="name" id="lil-gui-name-24">Model name</div><div class="widget"><input type="text" spellcheck="false" autocomplete="off" aria-labelledby="lil-gui-name-24"></div></div><div class="controller displayInfo disabled"><div class="name" id="lil-gui-name-25">Item key</div><div class="widget"><input type="text" spellcheck="false" autocomplete="off" aria-labelledby="lil-gui-name-25" disabled=""></div></div><div style="border-radius: 6px; background: rgb(30, 30, 30);">
+            <div style="border-radius: 6px;background: #1e1e1e;">
+                <div style="padding: 3px;border-bottom: solid 1px #181818;">
+                    <div style="padding: 3px;background: #181818;border-radius: 4px;display: flex;align-items: center;">
+                        <div style="display: flex;gap: 3px;flex-wrap: wrap;flex: 1;" data-role="fileList"></div>
+                    </div>
+                </div>
+                <div style="display: flex;">
+                    <div style="padding: 8px;display: flex;align-items: center;gap: 6px;border-bottom: solid 1px #181818;border-right: solid 1px #181818;flex: 1;">
+                        <i class="icon-file-text" style="font-size: 17px;font-weight: 100;display: flex;"></i>
+                        <div style="flex: 1;" data-role="jsonInfo">Model JSON not loaded</div>
+                    </div>
+                    <div style="padding: 8px;display: flex;align-items: center;gap: 6px;border-bottom: solid 1px #181818;flex: 1;">
+                        <i class="icon-image" style="font-size: 17px;font-weight: 100;display: flex;"></i>
+                        <div style="flex: 1;" data-role="textureInfo">No textures loaded</div>
+                    </div>
+                </div>
+                <div data-role="dropZone" style="margin: 8px;padding: 16px;border: 1px dashed #ffffff2f;border-radius: 8px;background: #ffffff05;cursor: pointer;user-select: none;">
+                    <div style="font-weight: 600;margin-bottom: 6px;">Drop files here</div>
+                    <div style="font-size: 12px;opacity: .75;">One zone for model JSON and textures. Click to choose files.</div>
+                </div>
+            </div>
+        </div><input type="file" multiple="" accept=".json,.png,.jpg,.jpeg,.webp,.gif" style="display: none;"><div class="controller">
+            <div class="widget" style="display: flex;flex-direction: row;gap: 10px;">
+                <button data-role="saveButton" style="white-space: nowrap;">Save model</button>
+                <button data-role="deleteButton" style="color: rgb(163, 91, 91); background: rgb(51, 34, 34); display: none;">Delete</button>
+                <div style="flex: 1;"></div>
+                <div data-role="status" class="display" style="align-items: center;">Create custom model | JSON missing | custom:model_name</div>
+            </div>
+        </div></div></div></div></div></div></div></div></div></div><div class="dialog animation_back_start_type2 hidden"><div class="lil-gui root animation_windows_start_type2 appManagerGUI"><div class="title d-none" role="button" aria-expanded="true" tabindex="0">
+            <span>Приложения</span>
+        </div><div class="children"><a><div><i class="icon-plus"></i></div><span>Добавить</span></a></div></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start searchGUI displaySearchGUI creativeSearchGUI"><div class="title" role="button" aria-expanded="true" tabindex="0">
+            <span>Block Finder</span>
+        </div><div class="children"><div class="display-search-header"><div class="controller display-search-heading" role="heading" aria-level="2"><div class="name">Блоки</div></div><div class="display-search-fields"><div class="controller string"><div class="name" id="lil-gui-name-13">Поиск</div><div class="widget"><input type="text" spellcheck="false" autocomplete="off" aria-labelledby="lil-gui-name-13"></div></div></div></div><div class="sideDockGUI"><a><i class="lucide icon-box"></i></a><a><i class="lucide icon-pickaxe"></i></a><a><div class="iconbde-player-head-finder"></div></a></div><div class="lil-gui animate__animated animate__faster" id="searchResults" style="visibility: hidden;"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Results</span></div><div class="children"><div class="display-search-viewport" tabindex="-1" id="block-search-results" role="tabpanel" aria-labelledby="block-search-tab-all"><div class="display-search-grid"></div></div><div class="display-search-scrollbar" tabindex="-1"><div></div></div><div class="display-search-empty" role="status" hidden=""></div></div></div><div class="buttonDockGUI"><span><b>LeftClick</b> - create an object inside the selected group</span><span><b>LeftClick + Shift</b> - replace all objects inside the group with the selected one</span></div></div><div class="creative-search-tabs" role="tablist" aria-label="Категории"><button type="button" id="block-search-tab-building_blocks" class="creative-search-tab" data-tab="building_blocks" data-row="top" data-name="Строительные блоки" data-align="left" role="tab" aria-label="Строительные блоки" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 0;"><div class="search-img bde_icon bde_icon_bricks" aria-hidden="true"></div></button><button type="button" id="block-search-tab-colored_blocks" class="creative-search-tab" data-tab="colored_blocks" data-row="top" data-name="Разноцветные блоки" data-align="left" role="tab" aria-label="Разноцветные блоки" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 1;"><div class="search-img bde_icon bde_icon_cyan_wool" aria-hidden="true"></div></button><button type="button" id="block-search-tab-natural_blocks" class="creative-search-tab" data-tab="natural_blocks" data-row="top" data-name="Природные блоки" data-align="left" role="tab" aria-label="Природные блоки" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 2;"><div class="search-img bde_icon bde_icon_grass_block" aria-hidden="true"></div></button><button type="button" id="block-search-tab-functional_blocks" class="creative-search-tab" data-tab="functional_blocks" data-row="top" data-name="Функциональные блоки" data-align="left" role="tab" aria-label="Функциональные блоки" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 3;"><div class="search-img bde_icon bde_icon_oak_sign" aria-hidden="true"></div></button><button type="button" id="block-search-tab-redstone_blocks" class="creative-search-tab" data-tab="redstone_blocks" data-row="top" data-name="Редстоун-механика" data-align="left" role="tab" aria-label="Редстоун-механика" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 4;"><div class="search-img bde_icon bde_icon_redstone" aria-hidden="true"></div></button><button type="button" id="block-search-tab-recent" class="creative-search-tab" data-tab="recent" data-row="top" data-name="Недавно использованные" data-align="right" role="tab" aria-label="Недавно использованные" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 1;"><div class="search-img bde_icon bde_icon_bookshelf" aria-hidden="true"></div></button><button type="button" id="block-search-tab-all" class="creative-search-tab" data-tab="all" data-row="top" data-name="Поиск" data-align="right" role="tab" aria-label="Поиск" aria-controls="block-search-results" aria-selected="true" tabindex="0" style="--tab-index: 0;"><div class="search-img bde_icon bde_icon_compass" aria-hidden="true"></div></button><button type="button" id="block-search-tab-tools_and_utilities" class="creative-search-tab" data-tab="tools_and_utilities" data-row="bottom" data-name="Инструменты и приспособления" data-align="left" role="tab" aria-label="Инструменты и приспособления" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 0;"><div class="search-img bde_icon bde_icon_diamond_pickaxe" aria-hidden="true"></div></button><button type="button" id="block-search-tab-combat" class="creative-search-tab" data-tab="combat" data-row="bottom" data-name="Оружие и доспехи" data-align="left" role="tab" aria-label="Оружие и доспехи" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 1;"><div class="search-img bde_icon bde_icon_netherite_sword" aria-hidden="true"></div></button><button type="button" id="block-search-tab-food_and_drinks" class="creative-search-tab" data-tab="food_and_drinks" data-row="bottom" data-name="Еда и напитки" data-align="left" role="tab" aria-label="Еда и напитки" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 2;"><div class="search-img bde_icon bde_icon_golden_apple" aria-hidden="true"></div></button><button type="button" id="block-search-tab-ingredients" class="creative-search-tab" data-tab="ingredients" data-row="bottom" data-name="Ингредиенты" data-align="left" role="tab" aria-label="Ингредиенты" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 3;"><div class="search-img bde_icon bde_icon_iron_ingot" aria-hidden="true"></div></button><button type="button" id="block-search-tab-spawn_eggs" class="creative-search-tab" data-tab="spawn_eggs" data-row="bottom" data-name="Яйца призыва" data-align="left" role="tab" aria-label="Яйца призыва" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 4;"><div class="search-img bde_icon bde_icon_creeper_spawn_egg" aria-hidden="true"></div></button><button type="button" id="block-search-tab-op_blocks" class="creative-search-tab" data-tab="op_blocks" data-row="bottom" data-name="Инструменты оператора" data-align="right" role="tab" aria-label="Инструменты оператора" aria-controls="block-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 0;"><div class="search-img bde_icon bde_icon_command_block" aria-hidden="true"></div></button></div><div class="searchLoadGUI"><div class="animate__animated animate__fadeIn" style="display: flex;justify-content: center;margin: 20px;"><span class="loader"></span></div></div></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start searchGUI displaySearchGUI creativeSearchGUI"><div class="title" role="button" aria-expanded="true" tabindex="0">
+            <span>Item Finder</span>
+        </div><div class="children"><div class="display-search-header"><div class="controller display-search-heading" role="heading" aria-level="2"><div class="name">Предметы</div></div><div class="display-search-fields"><div class="controller string"><div class="name" id="lil-gui-name-14">Поиск</div><div class="widget"><input type="text" spellcheck="false" autocomplete="off" aria-labelledby="lil-gui-name-14"></div></div></div></div><div class="sideDockGUI"><a><i class="lucide icon-box"></i></a><a><i class="lucide icon-pickaxe"></i></a><a><div class="iconbde-player-head-finder"></div></a></div><div class="lil-gui animate__animated animate__faster" id="searchResults" style="visibility: hidden;"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Results</span></div><div class="children"><div class="display-search-viewport" tabindex="-1" id="item-search-results" role="tabpanel" aria-labelledby="item-search-tab-all"><div class="display-search-grid"></div></div><div class="display-search-scrollbar" tabindex="-1"><div></div></div><div class="display-search-empty" role="status" hidden=""></div></div></div><div class="buttonDockGUI"><span><b>LeftClick</b> - create an object inside the selected group</span><span><b>LeftClick + Shift</b> - replace all objects inside the group with the selected one</span></div></div><div class="creative-search-tabs" role="tablist" aria-label="Категории"><button type="button" id="item-search-tab-building_blocks" class="creative-search-tab" data-tab="building_blocks" data-row="top" data-name="Строительные блоки" data-align="left" role="tab" aria-label="Строительные блоки" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 0;"><div class="search-img bde_icon bde_icon_bricks" aria-hidden="true"></div></button><button type="button" id="item-search-tab-colored_blocks" class="creative-search-tab" data-tab="colored_blocks" data-row="top" data-name="Разноцветные блоки" data-align="left" role="tab" aria-label="Разноцветные блоки" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 1;"><div class="search-img bde_icon bde_icon_cyan_wool" aria-hidden="true"></div></button><button type="button" id="item-search-tab-natural_blocks" class="creative-search-tab" data-tab="natural_blocks" data-row="top" data-name="Природные блоки" data-align="left" role="tab" aria-label="Природные блоки" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 2;"><div class="search-img bde_icon bde_icon_grass_block" aria-hidden="true"></div></button><button type="button" id="item-search-tab-functional_blocks" class="creative-search-tab" data-tab="functional_blocks" data-row="top" data-name="Функциональные блоки" data-align="left" role="tab" aria-label="Функциональные блоки" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 3;"><div class="search-img bde_icon bde_icon_oak_sign" aria-hidden="true"></div></button><button type="button" id="item-search-tab-redstone_blocks" class="creative-search-tab" data-tab="redstone_blocks" data-row="top" data-name="Редстоун-механика" data-align="left" role="tab" aria-label="Редстоун-механика" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 4;"><div class="search-img bde_icon bde_icon_redstone" aria-hidden="true"></div></button><button type="button" id="item-search-tab-recent" class="creative-search-tab" data-tab="recent" data-row="top" data-name="Недавно использованные" data-align="right" role="tab" aria-label="Недавно использованные" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 1;"><div class="search-img bde_icon bde_icon_bookshelf" aria-hidden="true"></div></button><button type="button" id="item-search-tab-all" class="creative-search-tab" data-tab="all" data-row="top" data-name="Поиск" data-align="right" role="tab" aria-label="Поиск" aria-controls="item-search-results" aria-selected="true" tabindex="0" style="--tab-index: 0;"><div class="search-img bde_icon bde_icon_compass" aria-hidden="true"></div></button><button type="button" id="item-search-tab-tools_and_utilities" class="creative-search-tab" data-tab="tools_and_utilities" data-row="bottom" data-name="Инструменты и приспособления" data-align="left" role="tab" aria-label="Инструменты и приспособления" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 0;"><div class="search-img bde_icon bde_icon_diamond_pickaxe" aria-hidden="true"></div></button><button type="button" id="item-search-tab-combat" class="creative-search-tab" data-tab="combat" data-row="bottom" data-name="Оружие и доспехи" data-align="left" role="tab" aria-label="Оружие и доспехи" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 1;"><div class="search-img bde_icon bde_icon_netherite_sword" aria-hidden="true"></div></button><button type="button" id="item-search-tab-food_and_drinks" class="creative-search-tab" data-tab="food_and_drinks" data-row="bottom" data-name="Еда и напитки" data-align="left" role="tab" aria-label="Еда и напитки" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 2;"><div class="search-img bde_icon bde_icon_golden_apple" aria-hidden="true"></div></button><button type="button" id="item-search-tab-ingredients" class="creative-search-tab" data-tab="ingredients" data-row="bottom" data-name="Ингредиенты" data-align="left" role="tab" aria-label="Ингредиенты" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 3;"><div class="search-img bde_icon bde_icon_iron_ingot" aria-hidden="true"></div></button><button type="button" id="item-search-tab-spawn_eggs" class="creative-search-tab" data-tab="spawn_eggs" data-row="bottom" data-name="Яйца призыва" data-align="left" role="tab" aria-label="Яйца призыва" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 4;"><div class="search-img bde_icon bde_icon_creeper_spawn_egg" aria-hidden="true"></div></button><button type="button" id="item-search-tab-op_blocks" class="creative-search-tab" data-tab="op_blocks" data-row="bottom" data-name="Инструменты оператора" data-align="right" role="tab" aria-label="Инструменты оператора" aria-controls="item-search-results" aria-selected="false" tabindex="-1" style="--tab-index: 0;"><div class="search-img bde_icon bde_icon_command_block" aria-hidden="true"></div></button></div><div class="searchLoadGUI"><div class="animate__animated animate__fadeIn" style="display: flex;justify-content: center;margin: 20px;"><span class="loader"></span></div></div></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start searchGUI displaySearchGUI headFinder"><div class="title" role="button" aria-expanded="true" tabindex="0">
+            <span>Head Finder</span>
+        </div><div class="children"><div class="display-search-header"><div class="controller display-search-heading" role="heading" aria-level="2"><div class="name">HeadFinder</div></div><div class="display-search-fields"><div class="controller string"><div class="name" id="lil-gui-name-15">Поиск</div><div class="widget"><input type="text" spellcheck="false" autocomplete="off" aria-labelledby="lil-gui-name-15"></div></div></div></div><div class="sideDockGUI"><a><i class="lucide icon-box"></i></a><a><i class="lucide icon-pickaxe"></i></a><a><div class="iconbde-player-head-finder"></div></a></div><div class="bdsort-box" style="margin-bottom: 13px;">
+            <a class="bdsort-button" id="bdsort-all">All</a>
+            <a class="bdsort-button" id="bdsort-alphabet">Alphabet</a>
+            <a class="bdsort-button" id="bdsort-animals">Animals</a>
+            <a class="bdsort-button" id="bdsort-blocks">Blocks</a>
+            <a class="bdsort-button" id="bdsort-decoration">Decor</a>
+            <a class="bdsort-button" id="bdsort-food">Food</a>
+            <a class="bdsort-button" id="bdsort-humanoid">Humanoid</a>
+            <a class="bdsort-button" id="bdsort-miscellaneous">Miscellaneous</a>
+            <a class="bdsort-button" id="bdsort-monsters">Monsters</a>
+            <a class="bdsort-button" id="bdsort-plants">Plants</a>
+        </div><div class="lil-gui animate__animated animate__fadeIn animate__faster" id="searchResults"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Results</span></div><div class="children"><div class="display-search-viewport" tabindex="-1"><div class="display-search-grid"></div></div><div class="display-search-scrollbar" tabindex="-1"><div></div></div></div></div><div style="text-align: center;opacity: 0.5;font-weight: 100;font-size: 12px;position: absolute;bottom: 9px;width: 100%;left: 0;">Головы из <a href="https://minecraft-heads.com/" target="_blank" style="color: #FFF;">minecraft-heads.com</a></div></div></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start newGUI"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;">
+            <span></span>
+        </div><div class="children">
+        <div style="width: 100px;height: 100px;position: absolute;background: #f90;filter: blur(100px);top: -100px;left: 30%;transform: translateX(-50%);"></div>
+        <h1 style="margin: 10px 0 8px;">Сохранить <span style="color:#f90">изменения</span>?</h1>
+        <p style="font-weight: 100;margin-top: 0px;">Сохраните изменения, иначе они могут быть утеряны.</p>
+        <div style="display: flex;gap: 4px;">
+            <button id="newGUI-save" data-sound-added="true">Сохранить изменения</button>
+            <button id="newGUI-download" data-sound-added="true">Скачать</button>
+            <button id="newGUI-nosave" data-sound-added="true">Не сохранять</button>
+        </div>
+        </div></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start installAppGUI"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;">
+            <span></span>
+        </div><div class="children">
+        <div class="installApp-img-logo"><img src="./logo_1.png"></div>
+        <div class="installApp-img" style="--bde-cover-image: url(https://editor.bdecdn.com/covers/20271/bde20271_1080.webp);"></div>
+        <div class="installApp-container">
+            <h1 class="installApp-title">Скачайте BDEngine App</h1>
+            <div class="installApp-desc">
+                Настольное приложение BDEngine для Windows. Открывайте проекты напрямую, работайте с файлами .bdengine и запускайте редактор как отдельное приложение без лишних действий в браузере.
+            </div>
+            <div class="installApp-buttons">
+                <a class="installApp-button" target="_blank" href="https://editor.bdecdn.com/BDEngineSetup.exe">Скачать для Windows (64bit)</a>
+                <a class="installApp-button installApp-button-min" href="https://github.com/illystray/bdengine-app/" target="_blank">Открыть GitHub</a>
+            </div>
+        </div>
+        </div></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start trackingConnect"><div class="title" role="button" aria-expanded="true" tabindex="0">
+            <span>Tracking Connect</span>
+        </div><div class="children"></div></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start modal-with-close settingsGUI"><div class="title" role="button" aria-expanded="true" tabindex="0">
+            <span>Settings</span>
+        </div><div class="children"></div><button type="button" class="modal-close" aria-label="Закрыть окно" data-sound-added="true"><i class="icon-x" aria-hidden="true"></i></button></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start modal-with-close dragdropGUI cardModalGUI"><div class="title" role="button" aria-expanded="true" tabindex="0">
+            <span>Open file</span>
+        </div><div class="children"></div><button type="button" class="modal-close" aria-label="Закрыть окно" data-sound-added="true"><i class="icon-x" aria-hidden="true"></i></button><div class="modal-card-glow"></div></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start modal-with-close cardModalGUI supportGUI"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;">
+            <span></span>
+        </div><div class="children"><h1 class="modal-card-heading"><span>Поддержать</span> BDEngine</h1><p class="modal-card-intro">BDEngine бесплатен для всех. Ваша поддержка помогает мне развивать редактор и добавлять новые функции.</p><div class="modal-card-grid"><a class="modal-card" data-support="donatex" href="https://donatex.gg/donate/illystray" target="_blank" rel="noopener noreferrer" data-sound-added="true"><div class="modal-card-header"><i class="icon-gift" aria-hidden="true"></i><span class="modal-card-badge">Без аккаунта</span></div><div class="modal-card-title">Донат через DonateX</div><div class="modal-card-subtitle">Разовая поддержка.<br>Аккаунт не нужен.</div></a><a class="modal-card" data-support="boosty-donate" href="https://boosty.to/illystray/donate" target="_blank" rel="noopener noreferrer" data-sound-added="true"><div class="modal-card-header"><i class="icon-heart-handshake" aria-hidden="true"></i></div><div class="modal-card-title">Донат через Boosty</div><div class="modal-card-subtitle">Разовая поддержка<br>без оформления подписки.</div></a><a class="modal-card" data-support="boosty-subscribe" href="https://boosty.to/illystray" target="_blank" rel="noopener noreferrer" data-sound-added="true"><div class="modal-card-header"><i class="icon-repeat" aria-hidden="true"></i></div><div class="modal-card-title">Подписка на Boosty</div><div class="modal-card-subtitle">Регулярная поддержка и доступ<br>к моим ресурспакам.</div></a><a class="modal-card" data-support="patreon-subscribe" href="https://www.patreon.com/illystray" target="_blank" rel="noopener noreferrer" data-sound-added="true"><div class="modal-card-header"><i class="icon-repeat" aria-hidden="true"></i></div><div class="modal-card-title">Подписка на Patreon</div><div class="modal-card-subtitle">Регулярная поддержка и доступ<br>к моим ресурспакам.</div></a></div></div><button type="button" class="modal-close" aria-label="Закрыть окно" data-sound-added="true"><i class="icon-x" aria-hidden="true"></i></button><div class="modal-card-glow"></div></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start serverTabGUI"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;">
+            <span>Server Tab</span>
+        </div><div class="children"></div></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start modal-with-close commandGUI"><div class="title" role="button" aria-expanded="true" tabindex="0">
+            <span>Export</span>
+        </div><div class="children"></div><button type="button" class="modal-close" aria-label="Закрыть окно" data-sound-added="true"><i class="icon-x" aria-hidden="true"></i></button></div></div><div class="dialog animation_back_start hidden"><div class="lil-gui root animation_windows_start commandGUI">
+        <div style="width: 100px;height: 100px;position: absolute;background: #f90;filter: blur(100px);top: -100px;left: 30%;transform: translateX(-50%);"></div>
+        <h1 style="font-size: 29px; margin-bottom: 0px;">Экспорт в <span style="color:#f90">Minecraft Сервер</span></h1>
+        <div style="margin-bottom: 10px;opacity: 0.75;">
+    Получите свою модель на сервере по её ID. Обратите внимание, что на сервере должен быть установлен плагин, поддерживающий эту функцию.<br>
+    Официальных плагинов нет. Вы можете разработать их самостоятельно с помощью  
+    <a target="_blank" style="color: #f90" href="https://www.block-display.com/server-api-guides/">
+        документации.
+    </a>
+</div><div class="bde-buttons-list-2"></div><div class="bde-buttons-list-2"></div><div class="lil-gui toolsGUI">
+        <div class="children">
+            <button id="bde-exportWindow-Back"><span>Назад</span></button>
+            <button id="bde-exportWindow-Change"><span>Изменить быструю команду</span></button>
+        </div>
+        </div><div class="anim_commandGUI-load anim_commandGUI-load-hide"><div class="anim_commandGUI-quick">Изменить быструю команду<div class="anim_commandGUI-quick-title"></div><div class="anim_commandGUI-quick-command"></div><div class="anim_commandGUI-quick-input"><input type="text"><a>Сохранить</a></div></div></div></div></div><div id="loading" class="animation_back_start" style="visibility: hidden;"><div class="backLoad-mainLogo loading-img animation_windows_start"><div></div><div></div><div style="opacity: 0.5"><div class="bdeLogo"></div></div></div><span class="animation_windows_start">Загрузка yellow_terracotta 65%</span></div></main>
+        <div class="bottom-panel lil-gui root allow-touch-styles d-none animPreview" id="timeline">
+            <div class="bottom-panel-resizer" id="timeline-resizer"><i class="lucide icon-ellipsis"></i></div>
+            <div class="title" role="button" aria-expanded="true" tabindex="0">
+                <div><i class="lucide icon-clock" style="margin-right: 6px;"></i>
+                    <div>Таймлайн</div>
+                </div>
+                <div class="timeline-controls">
+                    <i id="timeline-moveStart-button" class="button-effect bi bi-skip-start-fill"></i>
+                    <i id="timeline-play-button" class="button-effect bi bi-play-fill"></i>
+                    <i id="timeline-moveEnd-button" class="button-effect bi bi-skip-end-fill"></i>
+                    <i id="timeline-stop-button" class="button-effect bi bi-stop-fill" style="display: none"></i>
+                </div>
+                <div class="timeline-config">
+                    <a class="timeline-phys" id="timeline-phys">
+                        <i class="button-effect bi bi-play-fill"></i>Симулировать физику
+                    </a>
+                    <a class="timeline-phys" id="timeline-camera-record">
+                        <i class="button-effect bi bi-play-fill" id="timeline-camera-record-icon"></i><span id="timeline-camera-record-text">Запись движения камеры</span>
+                    </a>
+                    <div class="timeline-length"><span>Продолжительность (сек.):</span><input id="timeline-length-input" type="text" placeholder="10" value="60" autocomplete="off"></div>
+                    <div class="timeline-loop"><span>Зациклить таймлайн:</span><input id="timeline-loop-input" type="checkbox"></div>
+                </div>
+            </div>
+            <div class="children">
+                <div class="timeline-browser d-none" id="timeline-browser">
+                    <div class="timeline-browser-title">
+                        <div id="timeline-browser-title">Браузер звуков</div>
+                        <div style="display: flex;align-items: center;gap: 20px;">
+                            <a id="timeline-browser-sound-stop" style="font-size: 14px;">Остановить все звуки</a>
+                            <a id="timeline-browser-close" class="icon-x"></a>
+                        </div>
+                    </div>
+                    <div id="timeline-browser-content" class="timeline-browser-content"></div>
+                </div>
+                <div class="timeline-elements">
+                    <div class="timeline-time">
+                        <span id="timeline-current-time">00:00.0</span> <span style="margin-left: 8px;font-size: 13px;opacity: .5;">/ <span id="timeline-current-time-frame">0</span></span>
+                        <div style="flex: 1; display: flex; justify-content: flex-end;gap: 10px;">
+                            <span id="timeline-add-camera-button" style="display: block;" class="icon-camera"></span>
+                            <span id="timeline-add-empty-button" style="display: none;" class="icon-diamond-plus"></span>
+                        </div>
+                    </div>
+                    <div id="timeline-elem-list"><div style="position: relative; min-height: 100%;"><div style="position: absolute; left: 0px; right: 0px; top: 0px;"></div></div></div>
+                    <div id="timeline-filter">
+                        <div class="bdsort-box">
+                            <a class="bdsort-button bdsort-select" id="timeline-filter-group"><span>Показывать группы</span><i class="icon-move-3d"></i></a>
+                            <a class="bdsort-button" id="timeline-filter-head"><span>Показывать головы</span><i class="icon-brush"></i></a>
+                            <a class="bdsort-button" id="timeline-filter-state"><span>Показать states</span><i class="icon-box"></i></a>
+                            <a class="bdsort-button" id="timeline-filter-text"><span>Показывать текст</span><i class="icon-type"></i></a>
+                            <a class="bdsort-button" id="timeline-filter-hitbox"><span>Показывать хитбоксы</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-vector-square-icon lucide-vector-square svg-size"><path d="M19.5 7a24 24 0 0 1 0 10"></path><path d="M4.5 7a24 24 0 0 0 0 10"></path><path d="M7 19.5a24 24 0 0 0 10 0"></path><path d="M7 4.5a24 24 0 0 1 10 0"></path><rect x="17" y="17" width="5" height="5" rx="1"></rect><rect x="17" y="2" width="5" height="5" rx="1"></rect><rect x="2" y="17" width="5" height="5" rx="1"></rect><rect x="2" y="2" width="5" height="5" rx="1"></rect></svg></a>
+                            <a class="bdsort-button" id="timeline-filter-interaction"><span>Показывать интерактивные области</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-mouse-pointer-icon lucide-square-mouse-pointer svg-size"><path d="M12.034 12.681a.498.498 0 0 1 .647-.647l9 3.5a.5.5 0 0 1-.033.943l-3.444 1.068a1 1 0 0 0-.66.66l-1.067 3.443a.5.5 0 0 1-.943.033z"></path><path d="M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"></path></svg></a>
+                            <a class="bdsort-button" id="timeline-filter-particle"><span>Показывать частицы</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles svg-size"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-ticks" id="timeline-ticks">
+                    <div class="timeline-ticks-info" id="timeline-ticks-info">
+                        <div>
+                            <div><div class="icon-group"></div><div>Тут пока пусто</div></div>
+                            <div>
+                                Анимация объектов: объедините их в группу и при необходимости задайте pivot.<br>
+                                Анимация голов: можно менять TextureValue, если голова имеет сохраненные TextureValue.<br>
+                                Анимация состояния: блоки и элементы можно изменить в свойствах объекта.
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;width:fit-content;height: 100%;">
+                        <div class="timeline-current" id="timeline-current"><span></span>
+                            <div class="timeline-current-add"></div>
+                        </div>
+                        <div id="timeline-preview-range" style="display: none">
+                            <div id="timeline-preview-range-fill"></div>
+                            <div id="timeline-preview-range-start"></div>
+                            <div id="timeline-preview-range-end"></div>
+                        </div>
+                        <div class="timeline-timesec" id="timeline-timesec" style="--timeline-half-second-width: 80px;"><div><span>00:00.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:00.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:01.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:01.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:02.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:02.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:03.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:03.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:04.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:04.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:05.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:05.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:06.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:06.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:07.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:07.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:08.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:08.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:09.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:09.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:10.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:10.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:11.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:11.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:12.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:12.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:13.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:13.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:14.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:14.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:15.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:15.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:16.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:16.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:17.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:17.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:18.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:18.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:19.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:19.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:20.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:20.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:21.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:21.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:22.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:22.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:23.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:23.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:24.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:24.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:25.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:25.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:26.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:26.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:27.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:27.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:28.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:28.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:29.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:29.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:30.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:30.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:31.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:31.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:32.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:32.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:33.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:33.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:34.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:34.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:35.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:35.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:36.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:36.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:37.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:37.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:38.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:38.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:39.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:39.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:40.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:40.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:41.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:41.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:42.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:42.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:43.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:43.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:44.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:44.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:45.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:45.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:46.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:46.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:47.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:47.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:48.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:48.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:49.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:49.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:50.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:50.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:51.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:51.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:52.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:52.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:53.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:53.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:54.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:54.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:55.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:55.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:56.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:56.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:57.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:57.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:58.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:58.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:59.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>00:59.5</span><div><div></div><div></div><div></div><div></div><div></div></div></div><div><span>01:00.0</span><div><div></div><div></div><div></div><div></div><div></div></div></div></div>
+                        <div class="timeline-elements-ticks" id="timeline-tick-list"><div style="position: relative; min-height: 100%;"><div style="position: absolute; left: 0px; right: 0px; top: 0px;"></div></div></div>
+                    </div>
+                </div>
+                <div class="timeline-properties" id="timeline-properties"><div class="lil-gui root timelinePropertiesGUI animModeGUI"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span></span></div><div class="children"></div></div></div>
+            </div>
+        </div>
+        <div class="bottom-panel lil-gui root allow-touch-styles d-none" id="assets">
+            <div class="bottom-panel-resizer" id="assets-resizer"><i class="lucide icon-ellipsis"></i></div>
+            <div class="title" role="button" aria-expanded="true" tabindex="0">
+                <div><i class="icon-package-2" style="margin-right: 6px;"></i>
+                    <div>Ассеты</div>
+                </div>
+                <div class="assets-search"><div class="icon-search"></div><input type="text" placeholder="Поиск"></div>
+            </div>
+            <div class="children">
+                <div class="assets-side">
+                    <div class="assets-side-folders"><a class="assets-side-folders-main assets-side-folders-current"><i class="icon-folder"></i>Мои ассеты</a><div class="assets-side-folder"></div></div>
+                    <a class="assets-side-button"><i class="icon-cog"></i>Экспорт/Импорт ассетов</a>
+                </div>
+                <div class="assets-main">
+                    <div class="assets-confirm-delete d-none"><div><div><i class="icon-trash"></i>Подтвердить удаление</div><div>Вы уверены, что хотите удалить этот элемент? Это действие нельзя отменить.</div><div><button id="assets-delete-confirm" style="flex: 1;">Удалить</button><button id="assets-delete-cancel" style="background: #ff990030;color: #f90;flex: 1;">Отмена</button></div></div></div>
+                    <div class="assets-content-path"><a>Мои ассеты</a></div>
+                    <div class="assets-content"><div class="assets-empty-message"><div>
+<div style="display: flex;align-items: center;font-size: 17px;gap: 7px;"><div class="icon-folder" style=""></div><div style="">Нет ассетов</div></div><div>Щелкните ПКМ, чтобы создать папку.<br>Щелкните ПКМ по группе на сцене, чтобы сохранить ассет.</div></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-mobile-back right-mobile-back-hide"></div>
+    <div class="right-panel" id="side_box" style="display: none;">
+        <div class="right-panel-resizer"><i class="lucide icon-ellipsis-vertical"></i></div>
+        <div class="right-panel" id="side_box_scroll" style="margin: 0;width: 100%;height: 100%;overflow: hidden auto;">
+            <div id="side_container"><div class="lil-gui root" style="position: relative;"><div class="title" role="button" aria-expanded="true" tabindex="0" style="cursor: default;"><div style="flex: 1;">Объекты сцены</div><a id="scrollSceneBox" class="icon-mouse"></a><a id="pinSceneBox" class="icon-pin"></a></div><div class="children"></div><div class="lil-gui elementsGUI"><div class="title" role="button" aria-expanded="true" tabindex="0" style="cursor: default;">Не сохранено</div><div class="children" style="height: 250px !important; position: relative; user-select: none;"><div class="noEmpty" style="position: relative; min-height: 100%; height: 46px;"><div class="noEmpty" style="position: absolute; left: 0px; right: 0px; top: 0px; background: repeating-linear-gradient(to right, rgb(33, 33, 33) 0px, rgb(33, 33, 33) 14px, rgb(45, 45, 45) 14px, rgb(45, 45, 45) 16px) -9px 0px;"></div></div></div></div><div class="scene-panel-resizer"><i class="lucide icon-ellipsis"></i><i class="lucide icon-ellipsis"></i><i class="lucide icon-ellipsis"></i></div></div><div class="lil-gui root immersiveGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Погружение</span></div><div class="children"><div class="lil-gui"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Параметры</span></div><div class="children"><div class="controller number hasSlider"><div class="name" id="lil-gui-name-1">Время суток</div><div class="widget"><div class="slider"><div class="fill" style="width: 25.001%;"></div></div><input type="text" aria-labelledby="lil-gui-name-1" autocomplete="off"></div></div><label class="controller checkbox"><div class="name" id="lil-gui-name-2">Виртуальный пол</div><div class="widget"><input type="checkbox" aria-labelledby="lil-gui-name-2"></div></label><div class="bdeListButtons"><a class="bdeButton" data-sound-added="true">Выйти из погружения</a></div></div></div></div></div><div class="lil-gui root serverGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Share Party - Build Together</span></div><div class="children"></div></div><div class="lil-gui root minecraftLiveLinkGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Live Link</span></div><div class="children"></div></div><div class="lil-gui root animationListGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0">Управлять аниматором</div><div class="children"><div class="lil-gui"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span>List</span></div><div class="children" style="display: flex; gap: 10px; flex-direction: column;"><div class="lil-gui d-none"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span></span></div><div class="children" style="display: flex; gap: 10px; flex-direction: column;"><div class="lil-gui hidden" style="display: none;"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span></span></div><div class="children" style="display: flex; gap: 10px; flex-direction: column;"></div></div><div class="borderListObjects"><div class="borderListObjects-title">Анимации</div><div class="listObjects listObjectsType2"><div class="listObjectsType2-select" style="height: 36px;"><a><div>Default</div></a></div></div></div></div></div><div class="lil-gui d-none"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span></span></div><div class="children" style="display: flex; gap: 10px; flex-direction: column;"><div class="lil-gui hidden" style="display: none;"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span></span></div><div class="children" style="display: flex; gap: 10px; flex-direction: column;"></div></div><div class="borderListObjects"><div class="borderListObjects-title">Звуковые треки</div><div class="listObjects listObjectsType2"><div class="listObjectsType2-select" style="height: 36px;"><a><div>Default</div></a></div></div></div></div></div></div></div></div></div><div class="lil-gui root entityGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Entity Mode</span></div><div class="children"></div></div><div class="lil-gui root rootAnimGUI animModeGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Функции аниматора</span></div><div class="children" style="position: relative;"><div class="noEmpty" style="position: absolute; height: 100%; width: 100%; backdrop-filter: blur(5px); transition: 0.5s cubic-bezier(0, 0, 0, 1); z-index: 9;"></div></div></div><div class="lil-gui root transformsGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Трансформация</span></div><div class="children"></div></div><div class="lil-gui root hitboxGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Хитбоксы</span></div><div class="children"></div></div><div class="lil-gui root interactiveGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Интерактивные области</span></div><div class="children"></div></div><div class="lil-gui root particleGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Частицы</span></div><div class="children"></div></div><div class="lil-gui root headPaintGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Head Paint</span></div><div class="children"></div></div><div class="lil-gui root propertiesGUI"><div class="title" role="button" aria-expanded="true" tabindex="0">Свойства проекта</div><div class="children"><div class="lil-gui"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Основное</span></div><div class="children"><div class="controller string"><div class="name" id="lil-gui-name-16">Имя</div><div class="widget"><input type="text" spellcheck="false" autocomplete="off" aria-labelledby="lil-gui-name-16" data-sound-added="true"></div></div><div class="descName">Это название вашего проекта. Изменение названия не приводит к созданию нового проекта.<br>Чтобы создать новый проект, выберите <b>Файл &gt; Новый проект</b></div></div></div><div class="lil-gui"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>NBT</span></div><div class="children"><div class="controller string"><div class="name" id="lil-gui-name-17">NBT проекта</div><div class="widget"><input type="text" spellcheck="false" autocomplete="off" aria-labelledby="lil-gui-name-17" data-sound-added="true"></div><div class="bde-info"><i class="icon-info"></i><div>Основной NBT для корневого block_display</div></div></div><div class="controller string"><div class="name" id="lil-gui-name-18">Дополнительный NBT</div><div class="widget"><input type="text" spellcheck="false" autocomplete="off" aria-labelledby="lil-gui-name-18" data-sound-added="true"></div><div class="bde-info"><i class="icon-info"></i><div>Используйте это поле, чтобы добавить тег ко всем элементам в этой коллекции.</div></div></div><div class="descName">Укажите NBT в правильном формате. Ошибки могут привести к сбою команды.<br>Если вы хотите указать тег, укажите его в следующем виде: <b>Tags:["Name"]</b></div></div></div><div class="lil-gui"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Проект</span></div><div class="children"><label class="controller checkbox"><div class="name" id="lil-gui-name-19">Яркость по-умолчанию</div><div class="widget"><input type="checkbox" aria-labelledby="lil-gui-name-19" data-sound-added="true"></div><div class="bde-info"><i class="icon-info"></i><div>Установите этот флажок, если хотите экспортировать вместе со значениями по умолчанию [sky:15,block:0].<br>Это полезно для того, чтобы модели не становились черными при прохождении через реальные блоки.</div></div></label><label class="controller checkbox"><div class="name" id="lil-gui-name-20">Разделять модель по группам</div><div class="widget"><input type="checkbox" aria-labelledby="lil-gui-name-20" data-sound-added="true"></div><div class="bde-info"><i class="icon-info"></i><div>Самые вложенные группы экспортируются отдельными частями:<br>- Каждую часть можно отдельно перемещать в игре.<br>- Освещение каждой части определяется возле её собственного пивота.<br>- Дальность отображения рассчитывается отдельно: удалённые части скрываются, а ближайшие остаются видимыми.<br><br>Точки освещения неподвижны во время анимации. Разделение касается только дисплеев.</div></div></label><label class="controller checkbox"><div class="name" id="lil-gui-name-21">Включить оптимизацию кат-сцен проектов</div><div class="widget"><input type="checkbox" aria-labelledby="lil-gui-name-21" data-sound-added="true"></div><div class="bde-info"><i class="icon-info"></i><div>Экспериментальная функция для оптимизации экспорта кат-сцен: анимация объектов за пределами поля зрения анимированной камеры может быть исключена, а их состояние восстановлено перед возвращением в кадр. Функция может работать нестабильно. Используйте её только для проектов, которые просматриваются через анимированную камеру.</div></div></label></div></div><div class="lil-gui"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Сцена</span></div><div class="children"><label class="controller checkbox"><div class="name" id="lil-gui-name-22">Скрыть иконки со сцены</div><div class="widget"><input type="checkbox" aria-labelledby="lil-gui-name-22" data-sound-added="true"></div><div class="bde-info"><i class="icon-info"></i><div>Скрывает области и 2D-иконки хитбоксов, интерактивных областей, сидений и частиц. Не влияет на данные проекта и экспорт.</div></div></label><label class="controller checkbox"><div class="name" id="lil-gui-name-23">Скрыть сетку сцены</div><div class="widget"><input type="checkbox" aria-labelledby="lil-gui-name-23" data-sound-added="true"></div><div class="bde-info"><i class="icon-info"></i><div>Скрывает сетку сцены и вспомогательные оси в центре. В режиме скриншота используется отдельная настройка сетки.</div></div></label></div></div></div></div><div class="lil-gui root screenshotGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Скриншот</span></div><div class="children"></div></div><div class="lil-gui root generateAnimGUI d-none"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>Генерация Анимаций</span></div><div class="children"></div></div><div class="lil-gui root supportPanelGUI"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span></span></div><div class="children"><div class="lil-gui"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span>Support</span></div><div class="children"><div class="descName support-panel-info"><i class="icon-heart-handshake" aria-hidden="true"></i><div class="support-panel-copy"><h2 class="support-panel-title">Поддержите BDEngine</h2><p class="support-panel-description">Ваша поддержка помогает развивать редактор и сохранять его бесплатным для всех.</p></div></div><div class="bdeListButtons"><a class="bdeButton" data-sound-added="true" role="button" tabindex="0" aria-haspopup="dialog">Поддержать</a></div></div></div></div></div><div class="lil-gui root editorMenuGUI"><div class="title" role="button" aria-expanded="true" tabindex="0"><span>BDEngine Опции</span></div><div class="children"><div class="lil-gui"><div class="title" role="button" aria-expanded="true" tabindex="0" style="display: none;"><span>Menu</span></div><div class="children"><div class="bdeListButtons"><a class="bdeButton" style="padding: 15px; text-align: start; gap: 10px; justify-content: flex-start; overflow: hidden; position: relative; display: flex;" data-sound-added="true"><i class="icon-volume-off" style="font-size:20px;background: #D5D5D5;box-shadow: 0 0 0 6px #d5d5d521;color: #262626;padding: 4px;border-radius: 20px;font-weight: 600;"></i><div><div>Ожидание взаимодействия</div><div style="font-size: 12px;opacity: .75;">Heavenly Dreams - Ambient Boy</div></div></a></div><div class="bdeListButtons"><a class="bdeButton" data-sound-added="true"><i class="icon-cog"></i></a><div class="bdeHR"></div><a class="bdeButton" data-sound-added="true"><i class="icon-keyboard"></i></a><div class="bdeHR"></div><a class="bdeButton" data-sound-added="true"><i class="icon-chart-no-axes-column-increasing"></i></a><div class="bdeHR"></div><a class="bdeButton" data-sound-added="true"><i class="icon-volume-2"></i></a><div class="bdeHR"></div><a class="bdeButton" data-sound-added="true" title="BDEngine Гайды" aria-label="BDEngine Гайды"><i class="icon-book-open"></i></a></div><div class="bdeListButtons"><a class="bdeButton" data-sound-added="true"><i class="icon-toy-brick"></i>Плагины</a><div class="bdeHR"></div><a class="bdeButton" data-sound-added="true"><i class="icon-wrench"></i>Утилиты</a><div class="bdeHR"></div><a class="bdeButton" data-sound-added="true"><i class="icon-bug"></i>Баг/Ошибка</a></div></div></div></div></div></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function () {
+        if (window.isCrawler) return;
+
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = `/bdengine-content/main.min.js?v=${editorVersion}`;
+        document.body.appendChild(script);
+
+        if ('serviceWorker' in navigator) {
+            const swUrl = `/service-worker.js?v=${editorVersion}`;
+            const retryDelays = [2000, 5000];
+            (async () => {
+                for (let attempt = 1; attempt <= retryDelays.length + 1; attempt++) {
+                    try {
+                        await navigator.serviceWorker.register(swUrl);
+                        return;
+                    } catch (err) {
+                        const message = String(err?.message || '');
+                        const nonRetryableFailure = /MIME|HTTP response code|certificate|redirect|Content Security Policy|script evaluation failed/i.test(message);
+                        const storageUnavailable = !nonRetryableFailure && err?.name === 'TypeError' &&
+                            /(?:^|:\s*)Failed to access storage\.?$/i.test(message);
+                        const fetchFailure = !nonRetryableFailure && (err?.name === 'NetworkError' ||
+                            (err?.name === 'TypeError' && /unknown error occurred when fetching the script|Failed to fetch|Load failed|NetworkError when attempting to fetch resource/i.test(message)));
+                        if (!fetchFailure || attempt > retryDelays.length) {
+                            const failureMessage = `SW registration failed after ${attempt} attempt${attempt === 1 ? '' : 's'}:`;
+                            if (fetchFailure || storageUnavailable) console.warn(failureMessage, err);
+                            else console.error(failureMessage, err);
+                            return;
+                        }
+                        await new Promise(resolve => setTimeout(resolve, retryDelays[attempt - 1]));
+                    }
+                }
+            })();
+        }
+
+        function checkAndRemoveStyles() {
+            const styleElements = document.querySelectorAll('style');
+            styleElements.forEach((style) => {
+                if (style.textContent.includes('--font-family-mono: Menlo, Monaco, Consolas, "Droid Sans Mono')) {
+                    style.remove();
+                    observer.disconnect();
+                }
+            });
+        }
+
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.addedNodes.length) {
+                    checkAndRemoveStyles();
+                }
+            });
+        });
+        observer.observe(document.head, {
+            childList: true
+        });
+    })();
+</script><script type="module" src="./main.min.js.Без названия"></script>
+
+
+<div class="display-search-tooltip" role="tooltip" hidden=""></div></body></html>
